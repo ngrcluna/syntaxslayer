@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://chh32u6ybnrx6"]
+
+[ext_resource type="Script" uid="uid://dy44kj5hijji7" path="res://scenes/menu/slot_selection.gd" id="1_3oukd"]
+[ext_resource type="Texture2D" uid="uid://8npxbai8vkmd" path="res://assets/background/slot_selection.png" id="1_5bups"]
+[ext_resource type="Texture2D" uid="uid://dyaq8ihcrxiho" path="res://assets/ui/emptyslot.png" id="2_un4ie"]
+[ext_resource type="Texture2D" uid="uid://ciang3epwbwjw" path="res://assets/ui/1.png" id="3_y12g0"]
+[ext_resource type="Texture2D" uid="uid://bfvhgjmklqpht" path="res://assets/ui/newgame_pressed.png" id="4_amaxr"]
+[ext_resource type="Texture2D" uid="uid://cw1uld0i0gury" path="res://assets/ui/newgame_hover.png" id="5_exe2g"]
+[ext_resource type="Texture2D" uid="uid://b76okckip76vj" path="res://assets/ui/back_arrow.png" id="6_amaxr"]
+[ext_resource type="Texture2D" uid="uid://bpwrb1ci6oldc" path="res://assets/ui/back_arrow_pressed.png" id="7_exe2g"]
+[ext_resource type="Texture2D" uid="uid://tq36sev6hhkm" path="res://assets/ui/back_arrow_hover.png" id="8_yk3hl"]
+[ext_resource type="Texture2D" uid="uid://cop61o0l7cah4" path="res://assets/ui/settings.png" id="9_440od"]
+[ext_resource type="Texture2D" uid="uid://b08w5vjb3e02r" path="res://assets/ui/small_settings_pressed.png" id="10_cs4km"]
+[ext_resource type="Texture2D" uid="uid://cksydr4low4f3" path="res://assets/ui/small_settings_hover.png" id="11_3oukd"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="13_sijxa"]
+
+[node name="SlotSelection" type="Control" unique_id=1094418007]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3oukd")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1520667567]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 724.0
+texture = ExtResource("1_5bups")
+expand_mode = 1
+
+[node name="Slot 1" type="TextureRect" parent="." unique_id=1763032306]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -275.0
+offset_right = 166.5
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_un4ie")
+expand_mode = 1
+
+[node name="Slot 2" type="TextureRect" parent="." unique_id=811042207]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.5
+anchor_right = 0.069
+anchor_bottom = 0.5
+offset_top = -275.0
+offset_right = 333.00003
+offset_bottom = 275.0
+grow_vertical = 2
+texture = ExtResource("2_un4ie")
+expand_mode = 1
+
+[node name="Slot 3" type="TextureRect" parent="." unique_id=1127551197]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.5
+anchor_right = 0.931
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -275.0
+offset_bottom = 275.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_un4ie")
+expand_mode = 1
+
+[node name="New Game3" type="TextureButton" parent="." unique_id=2073810662]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807
+anchor_top = 0.779
+anchor_right = 0.807
+anchor_bottom = 0.779
+offset_left = -103.0
+offset_top = -26.0
+offset_right = 632.0
+offset_bottom = 144.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("3_y12g0")
+texture_pressed = ExtResource("4_amaxr")
+texture_hover = ExtResource("5_exe2g")
+texture_focused = ExtResource("5_exe2g")
+ignore_texture_size = true
+
+[node name="New Game2" type="TextureButton" parent="." unique_id=1789382316]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.507
+anchor_top = 0.772
+anchor_right = 0.514
+anchor_bottom = 0.772
+offset_left = -102.0
+offset_top = -23.0
+offset_right = 633.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("3_y12g0")
+texture_pressed = ExtResource("4_amaxr")
+texture_hover = ExtResource("5_exe2g")
+texture_focused = ExtResource("5_exe2g")
+ignore_texture_size = true
+
+[node name="New Game" type="TextureButton" parent="." unique_id=596272654]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.972
+anchor_right = 0.124
+anchor_bottom = 0.972
+offset_top = -170.0
+offset_right = 734.99994
+grow_vertical = 0
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("3_y12g0")
+texture_pressed = ExtResource("4_amaxr")
+texture_hover = ExtResource("5_exe2g")
+texture_focused = ExtResource("5_exe2g")
+ignore_texture_size = true
+
+[node name="Back Arrow" type="TextureButton" parent="." unique_id=1818445215]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.021
+anchor_bottom = 0.028
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 112.0
+offset_bottom = 49.84
+texture_normal = ExtResource("6_amaxr")
+texture_pressed = ExtResource("7_exe2g")
+texture_hover = ExtResource("8_yk3hl")
+texture_focused = ExtResource("8_yk3hl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Small Settings" type="TextureButton" parent="." unique_id=1011296626]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.952
+anchor_top = 0.025
+anchor_right = 0.986
+anchor_bottom = 0.053
+offset_left = -34.47998
+offset_bottom = 46.88
+grow_vertical = 2
+offset_transform_position = Vector2(0, -0.54)
+texture_normal = ExtResource("9_440od")
+texture_pressed = ExtResource("10_cs4km")
+texture_hover = ExtResource("11_3oukd")
+texture_focused = ExtResource("11_3oukd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Empty Slot3" type="Label" parent="." unique_id=482552003]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.855
+anchor_top = 0.234
+anchor_right = 0.923
+anchor_bottom = 0.296
+offset_left = -227.59009
+offset_bottom = 25.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.427493, 0.42749307, 0.42749307, 1)
+theme_override_fonts/font = ExtResource("13_sijxa")
+theme_override_font_sizes/font_size = 22
+text = "Empty Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Empty Slot2" type="Label" parent="." unique_id=144648611]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.272
+anchor_right = 0.194
+anchor_bottom = 0.286
+offset_left = -102.16
+offset_top = -10.920013
+offset_right = 125.42999
+offset_bottom = 14.079987
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.427493, 0.42749307, 0.42749307, 1)
+theme_override_fonts/font = ExtResource("13_sijxa")
+theme_override_font_sizes/font_size = 22
+text = "Empty Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Empty Slot" type="Label" parent="." unique_id=1414465713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.265
+anchor_right = 0.504
+anchor_bottom = 0.286
+offset_left = -117.16
+offset_top = -9.920013
+offset_right = 132.84
+offset_bottom = 15.079987
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.427493, 0.42749307, 0.42749307, 1)
+theme_override_fonts/font = ExtResource("13_sijxa")
+theme_override_font_sizes/font_size = 22
+text = "Empty Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Back Arrow" to="." method="_on_back_arrow_pressed"]

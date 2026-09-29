@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://2sgjndetcyh8"]
+
+[ext_resource type="Script" uid="uid://dqq54vnie1r80" path="res://scenes/character/npc.gd" id="1_7ik4o"]
+[ext_resource type="Texture2D" uid="uid://bt2we4chk43pq" path="res://assets/characters/python_npc.png" id="2_7ik4o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_182x5"]
+radius = 81.0
+height = 162.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caa8t"]
+atlas = ExtResource("2_7ik4o")
+region = Rect2(0, 0, 682, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvxt8"]
+atlas = ExtResource("2_7ik4o")
+region = Rect2(682, 0, 682, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q751"]
+atlas = ExtResource("2_7ik4o")
+region = Rect2(0, 0, 682, 682)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mho1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caa8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvxt8")
+}],
+"loop": 1,
+"name": &"npc_active",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q751")
+}],
+"loop": 1,
+"name": &"npc_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik4o"]
+size = Vector2(1003, 537.75)
+
+[node name="NPC" type="CharacterBody2D" unique_id=1621445046]
+script = ExtResource("1_7ik4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143860448]
+position = Vector2(3, 25)
+shape = SubResource("CapsuleShape2D_182x5")
+
+[node name="npc_animation" type="AnimatedSprite2D" parent="." unique_id=997101033]
+sprite_frames = SubResource("SpriteFrames_mho1w")
+animation = &"npc_idle"
+frame_progress = 0.77521497
+
+[node name="detection_area" type="Area2D" parent="." unique_id=899624432]
+
+[node name="detectionarea" type="CollisionShape2D" parent="detection_area" unique_id=1836349767]
+position = Vector2(-19.5, 279.125)
+shape = SubResource("RectangleShape2D_7ik4o")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

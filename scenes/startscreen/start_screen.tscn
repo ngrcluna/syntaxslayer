@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://datpl4xwi7mn5"]
+
+[ext_resource type="Script" uid="uid://bxo8xwwnfhbky" path="res://scripts/main_menu/start_screen.gd" id="1_wgw37"]
+[ext_resource type="Texture2D" uid="uid://brieaemu751c1" path="res://assets/background/loadingpage.png" id="2_hu660"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mho1w"]
+bg_color = Color(0.21568628, 0.45882353, 0.07058824, 1)
+
+[node name="StartScreen" type="Control" unique_id=1864491789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wgw37")
+
+[node name="Background with Logo" type="TextureRect" parent="." unique_id=225539473]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 722.0
+texture = ExtResource("2_hu660")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=356192725]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 644.0
+offset_right = 1283.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_mho1w")

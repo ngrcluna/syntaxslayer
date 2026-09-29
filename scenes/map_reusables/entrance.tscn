@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://brktbhkw03qoo"]
+
+[ext_resource type="Script" uid="uid://buicicpscbmme" path="res://scripts/map_reusables/entrance.gd" id="1_bntix"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_4m6nh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mho1w"]
+size = Vector2(69.75, 61.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m6nh"]
+
+[node name="Door" type="Node2D" unique_id=1509658433]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1814978542]
+script = ExtResource("1_bntix")
+destination_scene = "uid://b5cal4grbcudy"
+destination_spawn = "HeadquartersExitSpawn"
+
+[node name="Entrance Collision" type="CollisionShape2D" parent="Area2D" unique_id=315746463]
+shape = SubResource("RectangleShape2D_mho1w")
+
+[node name="Entrance" type="Label" parent="Area2D" unique_id=403407554]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = -32.0
+offset_right = 45.0
+offset_bottom = -12.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0.7647059, 0, 1)
+theme_override_fonts/font = ExtResource("2_4m6nh")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4m6nh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://un5nh87qijnv"]
+
+[ext_resource type="Script" uid="uid://mxedcl88iu4a" path="res://scripts/map_reusables/school_entrance.gd" id="1_pvw00"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_mkypd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mho1w"]
+size = Vector2(70, 52)
+
+[node name="SchoolDoor" type="Node2D" unique_id=690962212]
+
+[node name="Door" type="Area2D" parent="." unique_id=315048486]
+script = ExtResource("1_pvw00")
+destination_scene = "uid://b7lrcleud4g5b"
+destination_spawn = "SchoolExitSpawn"
+
+[node name="DoorShape" type="CollisionShape2D" parent="Door" unique_id=1215785829]
+shape = SubResource("RectangleShape2D_mho1w")
+
+[node name="EnterDoor" type="Label" parent="Door" unique_id=1927056424]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -25.0
+offset_right = 49.0
+offset_bottom = -14.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_mkypd")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
+[connection signal="input_event" from="Door" to="Door" method="_on_input_event"]

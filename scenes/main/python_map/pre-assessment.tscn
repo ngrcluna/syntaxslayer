@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bkjalv70o38wb"]
+
+[ext_resource type="Script" uid="uid://1xateuvkd6np" path="res://scripts/quiz/pre_assessment.gd" id="1_ik3la"]
+[ext_resource type="Texture2D" uid="uid://bjgsb7c1s3e05" path="res://assets/background/knowledgescan_bg.png" id="1_o3k8x"]
+[ext_resource type="Texture2D" uid="uid://cst1vd18uoy83" path="res://assets/ui/knowledgescan_title.png" id="2_ik3la"]
+[ext_resource type="Texture2D" uid="uid://cseqgfeuemw0a" path="res://assets/ui/finishbtn.png" id="3_yejmf"]
+[ext_resource type="Texture2D" uid="uid://ct4m6wi3fa2v1" path="res://assets/ui/finishbtn_pressed.png" id="4_j6v2k"]
+[ext_resource type="Texture2D" uid="uid://bxdrsloifqs8r" path="res://assets/ui/finishbtn_hover.png" id="5_kp5pm"]
+
+[node name="PreAssessment" type="Control" unique_id=930089186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ik3la")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1138551047]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 726.0
+texture = ExtResource("1_o3k8x")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="." unique_id=1208422626]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.033
+anchor_right = 0.5
+anchor_bottom = 0.033
+offset_left = -245.5
+offset_right = 245.5
+offset_bottom = 111.0
+grow_horizontal = 2
+texture = ExtResource("2_ik3la")
+expand_mode = 1
+
+[node name="FinishButton" type="TextureButton" parent="." unique_id=2050216756]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.924
+anchor_right = 0.5
+anchor_bottom = 0.924
+offset_left = -118.5
+offset_top = -74.28003
+offset_right = 138.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_yejmf")
+texture_pressed = ExtResource("4_j6v2k")
+texture_hover = ExtResource("5_kp5pm")
+texture_focused = ExtResource("5_kp5pm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

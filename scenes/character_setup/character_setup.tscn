@@ -1,0 +1,347 @@
+[gd_scene format=3 uid="uid://dv3pt8t3f15wo"]
+
+[ext_resource type="Script" uid="uid://dakhhpwubb5pu" path="res://scripts/main_menu/character_setup.gd" id="1_ko4lt"]
+[ext_resource type="Texture2D" uid="uid://0cal54bcqjcy" path="res://assets/background/customizationbg.jpeg" id="1_qqsgj"]
+[ext_resource type="Texture2D" uid="uid://dtfpjxi7o8fcf" path="res://assets/icons/platform.png" id="2_r86bo"]
+[ext_resource type="Texture2D" uid="uid://dybsnykdss47g" path="res://assets/icons/left_arrow.png" id="3_0svtq"]
+[ext_resource type="Texture2D" uid="uid://bn66lqyig5fc0" path="res://assets/ui/arrowleftpressed.png" id="4_0uer6"]
+[ext_resource type="Texture2D" uid="uid://fcx321ov42yl" path="res://assets/icons/right_arrow.png" id="4_h3ffu"]
+[ext_resource type="Texture2D" uid="uid://gh57mvp0er1g" path="res://assets/characters/girl_idle.png" id="5_0uer6"]
+[ext_resource type="Texture2D" uid="uid://be4i2cbjvn24r" path="res://assets/ui/savebtn_pressed.png" id="6_6lbhi"]
+[ext_resource type="Texture2D" uid="uid://b74lkp27s1nbu" path="res://assets/ui/arrowrightpressed.png" id="6_c67pi"]
+[ext_resource type="Texture2D" uid="uid://cyaelvhbmt03l" path="res://assets/ui/clearbtn_hover.png" id="6_hbucj"]
+[ext_resource type="Texture2D" uid="uid://c83mdwldrwt7n" path="res://assets/ui/backbtn.png" id="7_h3ffu"]
+[ext_resource type="Texture2D" uid="uid://b0djjqeume7ff" path="res://assets/background/charactersetup_txtbg.png" id="8_6eum7"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="8_fc7dl"]
+[ext_resource type="Texture2D" uid="uid://dajc6mucsch5l" path="res://assets/ui/savebtn_hover.png" id="9_ak2ck"]
+[ext_resource type="Texture2D" uid="uid://3v3yi0uh6i5w" path="res://assets/ui/info_txt.png" id="9_eqlvj"]
+[ext_resource type="Texture2D" uid="uid://da5pg8jw3nvbg" path="res://assets/ui/inputbox.png" id="9_ymiw7"]
+[ext_resource type="Texture2D" uid="uid://dulie71xuoeib" path="res://assets/ui/backbtn_pressed.png" id="10_c67pi"]
+[ext_resource type="Texture2D" uid="uid://crxisfbappn84" path="res://assets/ui/character_setuptxt.png" id="12_eqlvj"]
+[ext_resource type="Texture2D" uid="uid://b4jg0fof04rrs" path="res://assets/ui/savebtn.png" id="13_0gcbn"]
+[ext_resource type="Texture2D" uid="uid://dd5xqqn55lg3f" path="res://assets/ui/clearbtn.png" id="14_6lbhi"]
+[ext_resource type="Texture2D" uid="uid://d3w0swmi3a8wb" path="res://assets/ui/clearbtn_pressed.png" id="15_fc7dl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e2onr"]
+load_path = "res://.godot/imported/backbtn_hover.png-55d205c4c242cd9759707fab2a72c626.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_275mx"]
+
+[node name="Character Setup" type="Control" unique_id=1608436356]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ko4lt")
+
+[node name="CharacterSetup BG" type="TextureRect" parent="." unique_id=634788824]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 1282.0
+offset_bottom = 725.0
+texture = ExtResource("1_qqsgj")
+expand_mode = 1
+
+[node name="Set up Text" type="TextureRect" parent="." unique_id=1502247107]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 49.0
+offset_right = 557.0
+offset_bottom = 140.0
+texture = ExtResource("12_eqlvj")
+expand_mode = 1
+
+[node name="Platform" type="TextureRect" parent="." unique_id=2045199983]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.01
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = 494.0
+offset_right = 425.0
+offset_bottom = 199.0
+texture = ExtResource("2_r86bo")
+expand_mode = 1
+
+[node name="Left Arrow" type="TextureButton" parent="." unique_id=206394943]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.5
+anchor_right = 0.08
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_right = 70.0
+offset_bottom = 44.0
+grow_vertical = 2
+texture_normal = ExtResource("3_0svtq")
+texture_pressed = ExtResource("4_0uer6")
+texture_hover = ExtResource("4_0uer6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Right Arrow" type="TextureButton" parent="." unique_id=703730020]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36
+anchor_top = 0.5
+anchor_right = 0.4
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_right = 18.800049
+offset_bottom = 44.0
+grow_vertical = 2
+texture_normal = ExtResource("4_h3ffu")
+texture_pressed = ExtResource("6_c67pi")
+texture_hover = ExtResource("6_c67pi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Character" type="TextureRect" parent="." unique_id=1975708034]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.5
+anchor_right = 0.15
+anchor_bottom = 0.5
+offset_top = -184.0
+offset_right = 253.0
+offset_bottom = 163.5
+grow_vertical = 2
+texture = ExtResource("5_0uer6")
+expand_mode = 1
+
+[node name="Back Button" type="TextureButton" parent="." unique_id=527298018]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.9
+anchor_right = 0.1
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 71.0
+offset_bottom = -57.0
+grow_vertical = 0
+texture_normal = ExtResource("7_h3ffu")
+texture_pressed = ExtResource("10_c67pi")
+texture_hover = SubResource("CompressedTexture2D_e2onr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Text Background" type="TextureRect" parent="." unique_id=1153442017]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.924
+anchor_top = 0.453
+anchor_right = 0.939
+anchor_bottom = 0.561
+offset_left = -577.0
+offset_top = -281.5
+offset_bottom = 281.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_6eum7")
+expand_mode = 1
+
+[node name="Information Text" type="TextureRect" parent="." unique_id=996992100]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.816
+anchor_top = 0.169
+anchor_right = 0.831
+anchor_bottom = 0.17
+offset_left = -275.0
+offset_top = -32.5
+offset_bottom = 32.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_eqlvj")
+expand_mode = 1
+
+[node name="Enter Name" type="Label" parent="." unique_id=800197439]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.607
+anchor_top = 0.254
+anchor_right = 0.685
+anchor_bottom = 0.269
+offset_left = -125.0
+offset_top = -12.5
+offset_right = 125.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 22
+text = "ENTER NAME:"
+
+[node name="Name Edit" type="TextureRect" parent="." unique_id=1998290660]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.908
+anchor_top = 0.331
+anchor_right = 0.954
+anchor_bottom = 0.346
+offset_left = -505.0
+offset_top = -27.5
+offset_right = -58.880005
+offset_bottom = 27.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_ymiw7")
+expand_mode = 1
+
+[node name="PlayerName" type="LineEdit" parent="Name Edit" unique_id=770360160]
+layout_mode = 0
+offset_left = 26.76001
+offset_top = 11.179993
+offset_right = 476.76
+offset_bottom = 56.179993
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_275mx")
+placeholder_text = "e.g. juandcruz"
+max_length = 15
+
+[node name="Enter Course" type="Label" parent="." unique_id=1288022387]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.736
+anchor_top = 0.435
+anchor_right = 0.736
+anchor_bottom = 0.445
+offset_left = -286.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 22
+text = "ENTER COURSE:"
+
+[node name="Course Edit" type="TextureRect" parent="." unique_id=1617956927]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.863
+anchor_top = 0.51
+anchor_right = 0.909
+anchor_bottom = 0.52
+offset_left = -446.12
+offset_top = -27.5
+offset_bottom = 27.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_ymiw7")
+expand_mode = 1
+
+[node name="PlayerCourse" type="LineEdit" parent="Course Edit" unique_id=1888787887]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 9.999985
+offset_right = 479.0
+offset_bottom = 54.999985
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_275mx")
+placeholder_text = "e.g. BSCS"
+max_length = 4
+
+[node name="Enter Email" type="Label" parent="." unique_id=1299264303]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.736
+anchor_top = 0.426
+anchor_right = 0.773
+anchor_bottom = 0.426
+offset_left = -284.08002
+offset_top = 108.79999
+offset_right = 89.91998
+offset_bottom = 131.79999
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 22
+text = "EMAIL:(Optional)"
+
+[node name="Email Edit" type="TextureRect" parent="." unique_id=1897251848]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.863
+anchor_top = 0.51
+anchor_right = 0.909
+anchor_bottom = 0.52
+offset_left = -444.64
+offset_top = 81.80002
+offset_right = 1.4799805
+offset_bottom = 136.79999
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_ymiw7")
+expand_mode = 1
+
+[node name="PlayerEmail" type="LineEdit" parent="Email Edit" unique_id=2123739235]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 8.999985
+offset_right = 476.0
+offset_bottom = 53.999985
+theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("8_fc7dl")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_275mx")
+placeholder_text = "Institutional Email"
+max_length = 30
+
+[node name="Clear Button" type="TextureButton" parent="." unique_id=274158817]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691
+anchor_top = 0.837
+anchor_right = 0.691
+anchor_bottom = 0.846
+offset_left = -167.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("14_6lbhi")
+texture_pressed = ExtResource("15_fc7dl")
+texture_hover = ExtResource("6_hbucj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Save Button" type="TextureButton" parent="." unique_id=892297000]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.864
+anchor_top = 0.836
+anchor_right = 0.864
+anchor_bottom = 0.847
+offset_left = -167.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("13_0gcbn")
+texture_pressed = ExtResource("6_6lbhi")
+texture_hover = ExtResource("9_ak2ck")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Left Arrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="Right Arrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Clear Button" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="Save Button" to="." method="_on_save_button_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bwu1ik605avnb"]
+
+[ext_resource type="Script" uid="uid://bm2uta0c86ils" path="res://scripts/map_reusables/exit.gd" id="1_5sc5r"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_jd7at"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mho1w"]
+size = Vector2(191, 170)
+
+[node name="Exit" type="Node2D" unique_id=425686685]
+
+[node name="Exit Area" type="Area2D" parent="." unique_id=495365393]
+script = ExtResource("1_5sc5r")
+destination_scene = "uid://cvhc00y7kahcn"
+destination_spawn = "HQEntranceSpawn"
+interaction_text = "Tap to Exit"
+
+[node name="Exit Shape" type="CollisionShape2D" parent="Exit Area" unique_id=437950492]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_mho1w")
+
+[node name="Exit" type="Label" parent="Exit Area" unique_id=517986695]
+anchors_preset = -1
+offset_left = -94.0
+offset_top = -102.0
+offset_right = 96.0
+offset_bottom = -67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jd7at")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Exit Area" to="Exit Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Exit Area" to="Exit Area" method="_on_body_exited"]
+[connection signal="input_event" from="Exit Area" to="Exit Area" method="_on_input_event"]

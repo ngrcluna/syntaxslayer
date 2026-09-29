@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dcmoun6jy6quo"]
+
+[ext_resource type="Script" uid="uid://dkfj0auls4lbh" path="res://scripts/main_menu/language_selection_screen.gd" id="1_8g8ho"]
+[ext_resource type="Texture2D" uid="uid://ls04q0ihbhxa" path="res://assets/background/Cloud BG.png" id="1_fmtw5"]
+[ext_resource type="Texture2D" uid="uid://c2edjfdc233bu" path="res://assets/ui/Compass 1.png" id="2_puopj"]
+[ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_p6s0t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mho1w"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_182x5"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ls2ww"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Language Selection Screen" type="Control" unique_id=867028860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8g8ho")
+
+[node name="Cloud BG" type="TextureRect" parent="." unique_id=1642635187]
+layout_mode = 0
+offset_left = -60.0
+offset_right = 1305.0
+offset_bottom = 728.0
+texture = ExtResource("1_fmtw5")
+expand_mode = 1
+
+[node name="Compass" type="TextureRect" parent="." unique_id=1706059520]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -186.5
+offset_right = 219.0
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_puopj")
+expand_mode = 1
+
+[node name="Python Button" type="Button" parent="." unique_id=605159724]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.162
+anchor_right = 0.518
+anchor_bottom = 0.196
+offset_left = -37.0
+offset_right = 37.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_focus_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_pressed_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0.4, 0.73333335, 0.41568628, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.21960784, 0.5568628, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_p6s0t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mho1w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_182x5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ls2ww")
+toggle_mode = true
+button_pressed = true
+text = "PYTHON"
+
+[node name="CPP Button" type="Button" parent="." unique_id=1076068581]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245
+anchor_top = 0.486
+anchor_right = 0.258
+anchor_bottom = 0.569
+offset_top = -15.5
+offset_right = 133.91998
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_focus_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_pressed_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0.9372549, 0.3254902, 0.3137255, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7764706, 0.15686275, 0.15686275, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6s0t")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mho1w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_182x5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ls2ww")
+toggle_mode = true
+button_pressed = true
+text = "C++"
+
+[node name="C Button" type="Button" parent="." unique_id=1922015185]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.752
+anchor_top = 0.51
+anchor_right = 0.752
+anchor_bottom = 0.544
+offset_left = -133.91992
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_focus_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_pressed_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.53333336, 0.8980392, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.08235294, 0.39607844, 0.7529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6s0t")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_mho1w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_182x5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ls2ww")
+toggle_mode = true
+button_pressed = true
+text = "C"
+
+[node name="Java Button" type="Button" parent="." unique_id=1600307962]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.876
+anchor_right = 0.521
+anchor_bottom = 0.876
+offset_left = -81.03998
+offset_top = -31.0
+offset_right = 81.03998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_focus_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_pressed_color = Color(0.3647059, 0.2509804, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0.9843137, 0.54901963, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9372549, 0.42352942, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6s0t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mho1w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_182x5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ls2ww")
+toggle_mode = true
+button_pressed = true
+text = "JAVA"
+
+[connection signal="pressed" from="Python Button" to="." method="_on_python_button_pressed"]
+[connection signal="pressed" from="CPP Button" to="." method="_on_cpp_button_pressed"]
+[connection signal="pressed" from="C Button" to="." method="_on_c_button_pressed"]
+[connection signal="pressed" from="Java Button" to="." method="_on_java_button_pressed"]
