@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://chh32u6ybnrx6"]
 
 [ext_resource type="Script" uid="uid://dy44kj5hijji7" path="res://scenes/menu/slot_selection.gd" id="1_3oukd"]
-[ext_resource type="Texture2D" uid="uid://8npxbai8vkmd" path="res://assets/background/slot_selection.png" id="1_5bups"]
 [ext_resource type="Texture2D" uid="uid://dyaq8ihcrxiho" path="res://assets/ui/emptyslot.png" id="2_un4ie"]
+[ext_resource type="Texture2D" uid="uid://dfdewo2eeh056" path="res://assets/background/green.png" id="2_yk3hl"]
 [ext_resource type="Texture2D" uid="uid://ciang3epwbwjw" path="res://assets/ui/1.png" id="3_y12g0"]
 [ext_resource type="Texture2D" uid="uid://bfvhgjmklqpht" path="res://assets/ui/newgame_pressed.png" id="4_amaxr"]
 [ext_resource type="Texture2D" uid="uid://cw1uld0i0gury" path="res://assets/ui/newgame_hover.png" id="5_exe2g"]
 [ext_resource type="Texture2D" uid="uid://b76okckip76vj" path="res://assets/ui/back_arrow.png" id="6_amaxr"]
 [ext_resource type="Texture2D" uid="uid://bpwrb1ci6oldc" path="res://assets/ui/back_arrow_pressed.png" id="7_exe2g"]
 [ext_resource type="Texture2D" uid="uid://tq36sev6hhkm" path="res://assets/ui/back_arrow_hover.png" id="8_yk3hl"]
-[ext_resource type="Texture2D" uid="uid://cop61o0l7cah4" path="res://assets/ui/settings.png" id="9_440od"]
-[ext_resource type="Texture2D" uid="uid://b08w5vjb3e02r" path="res://assets/ui/small_settings_pressed.png" id="10_cs4km"]
-[ext_resource type="Texture2D" uid="uid://cksydr4low4f3" path="res://assets/ui/small_settings_hover.png" id="11_3oukd"]
 [ext_resource type="FontFile" uid="uid://olvdvdswulh3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="13_sijxa"]
 
 [node name="SlotSelection" type="Control" unique_id=1094418007]
@@ -27,7 +24,7 @@ script = ExtResource("1_3oukd")
 layout_mode = 0
 offset_right = 1285.0
 offset_bottom = 724.0
-texture = ExtResource("1_5bups")
+texture = ExtResource("2_yk3hl")
 expand_mode = 1
 
 [node name="Slot 1" type="TextureRect" parent="." unique_id=1763032306]
@@ -145,24 +142,6 @@ texture_normal = ExtResource("6_amaxr")
 texture_pressed = ExtResource("7_exe2g")
 texture_hover = ExtResource("8_yk3hl")
 texture_focused = ExtResource("8_yk3hl")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Small Settings" type="TextureButton" parent="." unique_id=1011296626]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.952
-anchor_top = 0.025
-anchor_right = 0.986
-anchor_bottom = 0.053
-offset_left = -34.47998
-offset_bottom = 46.88
-grow_vertical = 2
-offset_transform_position = Vector2(0, -0.54)
-texture_normal = ExtResource("9_440od")
-texture_pressed = ExtResource("10_cs4km")
-texture_hover = ExtResource("11_3oukd")
-texture_focused = ExtResource("11_3oukd")
 ignore_texture_size = true
 stretch_mode = 0
 

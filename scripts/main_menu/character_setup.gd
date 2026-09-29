@@ -46,8 +46,6 @@ func _on_save_button_pressed() -> void:
 
 func _on_clear_button_pressed() -> void:
 	$"Name Edit/PlayerName".clear()
-	$"Course Edit/PlayerCourse".clear()
-	$"Email Edit/PlayerEmail".clear()
 
 
 func _on_back_button_pressed() -> void:

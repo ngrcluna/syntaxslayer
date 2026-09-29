@@ -50,20 +50,13 @@ var npc_state = "first_visit"
 # school_complete
 # post_assessment_complete
 
-
-# ============================================================
-# READY
-# ============================================================
-
 func _ready() -> void:
 
 	speech_bubble.hide()
 	tap_button.hide()
 
 
-# ============================================================
-# START NPC DIALOGUE
-# ============================================================
+# Simula ng NPC DIALOGUE
 
 func start_dialogue() -> void:
 
@@ -113,16 +106,30 @@ func set_dialogue() -> void:
 				"And come back here. No pressure, just do your best!"
 			]
 
-
 		"pre_assessment_complete":
 
 			dialogue = [
-				"Scan complete! Here's something you'll need.",
-				"This is your Journal. It contains video lessons you can watch anytime.",
-				"Keep it with you. You'll need it on your journey."
+				"Scan complete! I need to show you something.",
+				"Head to the computer in the room on the right ⮟",
+				"Watch the video there. It'll teach you what you need to know.",
+				"When you're finished, come back to me. I've got something for you that'll help you on your journey."
 			]
-
-
+		"journal_access":
+			
+			dialogue = [
+				"You're back. Nice work!",
+				"You have unlocked your journal.",
+				"You can use it anytime to review your lessons.",
+				"Keep it handy. It'll help you on your journey."
+			]
+		"compiler_access":
+			dialogue = [
+				"One more thing before you go.",
+				"This is your Compiler. It'll help you test your code.", 
+				"You won't need it all the time, though.", 
+				"You can use it during battles when you need to check your code.", 
+				"Use it wisely. It might just help you defeat those bugs."
+			]
 		"journal_complete":
 
 			dialogue = [
@@ -159,7 +166,7 @@ func set_dialogue() -> void:
 
 
 # ============================================================
-# TAP TO CONTINUE
+# TAPPING EME EME
 # ============================================================
 
 func _on_tap_button_pressed() -> void:
@@ -205,6 +212,9 @@ func handle_dialogue_finished() -> void:
 
 
 		"pre_assessment_complete":
+			print("Knowledge Scan Done")
+		
+		"journal_access":
 			print("Open Journal")
 
 
@@ -226,10 +236,11 @@ func handle_dialogue_finished() -> void:
 func complete_pre_assessment() -> void:
 	npc_state = "pre_assessment_complete"
 
+func complete_videowatching() -> void:
+	npc_state = "journal_access"
 
 func complete_journal() -> void:
 	npc_state = "journal_complete"
-
 
 func complete_school_stage() -> void:
 	npc_state = "school_complete"
@@ -242,3 +253,7 @@ func complete_post_assessment() -> void:
 func _on_scanner_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.play_lay_down_animation()
+
+
+func _on_computer_pressed() -> void:
+	pass # Replace with function body.

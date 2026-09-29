@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://datpl4xwi7mn5"]
 
 [ext_resource type="Script" uid="uid://bxo8xwwnfhbky" path="res://scripts/main_menu/start_screen.gd" id="1_wgw37"]
-[ext_resource type="Texture2D" uid="uid://brieaemu751c1" path="res://assets/background/loadingpage.png" id="2_hu660"]
+[ext_resource type="Texture2D" uid="uid://byhp5jr0ntkhp" path="res://assets/background/loadingscreen.png" id="2_hu660"]
+[ext_resource type="FontFile" uid="uid://dp8av8u6vqhep" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_0vsgl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mho1w"]
 bg_color = Color(0.21568628, 0.45882353, 0.07058824, 1)
@@ -17,8 +18,9 @@ script = ExtResource("1_wgw37")
 
 [node name="Background with Logo" type="TextureRect" parent="." unique_id=225539473]
 layout_mode = 0
+offset_top = -3.0
 offset_right = 1285.0
-offset_bottom = 722.0
+offset_bottom = 719.0
 texture = ExtResource("2_hu660")
 expand_mode = 1
 
@@ -30,4 +32,6 @@ offset_right = 1283.0
 offset_bottom = 720.0
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_0vsgl")
+theme_override_font_sizes/font_size = 35
 theme_override_styles/fill = SubResource("StyleBoxFlat_mho1w")

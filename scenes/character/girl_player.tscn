@@ -231,7 +231,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"upward",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -259,7 +259,8 @@ script = ExtResource("1_gniwl")
 [node name="girl_player_animation" type="AnimatedSprite2D" parent="." unique_id=1043147793]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_mho1w")
-animation = &"idle"
+animation = &"downward"
+frame_progress = 0.5107998
 
 [node name="girl_collisioncapsule" type="CollisionShape2D" parent="." unique_id=398873838]
 y_sort_enabled = true

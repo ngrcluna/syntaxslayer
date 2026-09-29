@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b5cal4grbcudy"]
 
 [ext_resource type="Texture2D" uid="uid://dfb0r8212reh5" path="res://assets/background/black.png" id="1_4cknh"]
+[ext_resource type="Script" uid="uid://cnlinusq1457o" path="res://scenes/main/python_map/headquarters.gd" id="1_pdtac"]
 [ext_resource type="Texture2D" uid="uid://c2xeg0jnkcfec" path="res://assets/buildings/python/headquarters_interior.png" id="2_wpawp"]
 [ext_resource type="Texture2D" uid="uid://bvjyww3i3hy0m" path="res://assets/buildings/python/hq_counter.png" id="3_h0keh"]
 [ext_resource type="PackedScene" uid="uid://bm6xom67o0o3r" path="res://scenes/character/girl_player.tscn" id="3_m8ery"]
@@ -13,6 +14,9 @@
 [ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="10_dquot"]
 [ext_resource type="Texture2D" uid="uid://c83rvdf0xhvu5" path="res://assets/items/python_knowledgescanner.png" id="12_tlxbw"]
 [ext_resource type="Script" uid="uid://bk4b1wljr7mmw" path="res://scenes/main/python_map/scanner_detector.gd" id="13_u5qb7"]
+[ext_resource type="Script" uid="uid://cad252dyfc0in" path="res://scenes/main/python_map/watch_video.gd" id="14_10mim"]
+[ext_resource type="Texture2D" uid="uid://dqyt3w48gihxb" path="res://assets/items/computer_placeholder.png" id="14_wclbr"]
+[ext_resource type="Texture2D" uid="uid://by7udepsflwcq" path="res://assets/items/computer_placeholder_pressed.png" id="15_10mim"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlxbw"]
 texture = ExtResource("9_387c4")
@@ -3352,6 +3356,7 @@ sources/0 = SubResource("TileSetAtlasSource_u5qb7")
 size = Vector2(44, 16)
 
 [node name="Headquarters" type="Node2D" unique_id=235855236]
+script = ExtResource("1_pdtac")
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=994419606 node_paths=PackedStringArray("npc_node")]
 script = ExtResource("9_dquot")
@@ -3404,10 +3409,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1240.0
-offset_top = -1084.0
-offset_right = 1076.0
-offset_bottom = 577.0
+offset_left = -1295.0
+offset_top = -1093.0
+offset_right = 1021.0
+offset_bottom = 568.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_4cknh")
@@ -3473,7 +3478,26 @@ shape = SubResource("RectangleShape2D_mho1w")
 [node name="ScannerSpawnPoint" type="Marker2D" parent="." unique_id=710738696]
 position = Vector2(116, 103)
 
+[node name="WatchVideo" type="Node2D" parent="." unique_id=2032539232]
+script = ExtResource("14_10mim")
+
+[node name="Computer" type="TextureButton" parent="WatchVideo" unique_id=981077134]
+offset_left = 275.0
+offset_top = 88.0
+offset_right = 292.0
+offset_bottom = 102.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("14_wclbr")
+texture_pressed = ExtResource("15_10mim")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VideoWatchingSpawn" type="Marker2D" parent="." unique_id=1077602979]
+position = Vector2(271, 113)
+
 [connection signal="pressed" from="Dialogue/TapButton" to="Dialogue" method="_on_tap_button_pressed"]
 [connection signal="body_entered" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_exited"]
 [connection signal="input_event" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_input_event"]
+[connection signal="pressed" from="WatchVideo/Computer" to="WatchVideo" method="_on_computer_pressed"]

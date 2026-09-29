@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SpawnManager="*uid://boqw0or52j362"
 Global="*uid://c84ai0hunqw0b"
+VideoManager="*uid://b61hsf0rxodqg"
 
 [display]
 

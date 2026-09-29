@@ -10,9 +10,7 @@ func _process(delta: float) -> void:
 
 func _on_python_button_pressed() -> void:
 	selected_language = "Python"
-	language_texture.texture = preload("res://assets/ui/Python_Compass.png")
 	save_language_selection(selected_language)
-	await get_tree().create_timer(0.05).timeout
 	get_tree().change_scene_to_file("res://scenes/main/python_map/python_map.tscn")
 
 
@@ -21,7 +19,7 @@ func _on_cpp_button_pressed() -> void:
 	language_texture.texture = preload("res://assets/ui/CPP_Compass.png")
 	save_language_selection(selected_language)
 	await get_tree().create_timer(0.05).timeout
-#	get_tree().change_scene_to_file("res://scenes/main/python_map/cpp_map")
+#	get_tree().change_scene_to_file("res://scenes/main/python_map/_map")
 
 
 func _on_c_button_pressed() -> void:

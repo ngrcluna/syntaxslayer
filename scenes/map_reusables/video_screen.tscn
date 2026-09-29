@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://88pnohcvvqeo"]
+
+[ext_resource type="Script" uid="uid://cvqtidslodt04" path="res://scenes/map_reusables/video_screen.gd" id="1_81t5l"]
+[ext_resource type="VideoStream" uid="uid://dr3jkxsg4v4yt" path="res://assets/videos/python/python_lesson1.ogv" id="2_a7w7c"]
+[ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_vagqn"]
+
+[node name="VideoScreen" type="CanvasLayer" unique_id=387482482]
+script = ExtResource("1_81t5l")
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=309695971]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_a7w7c")
+expand = true
+
+[node name="PlayPauseButton" type="Button" parent="." unique_id=569334980]
+offset_left = 420.0
+offset_top = 603.0
+offset_right = 616.0
+offset_bottom = 669.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0.5823297, 1, 0.5717406, 1)
+theme_override_fonts/font = ExtResource("2_vagqn")
+theme_override_font_sizes/font_size = 31
+text = "Play"
+
+[node name="CloseButton" type="Button" parent="." unique_id=3789283]
+offset_left = 650.0
+offset_top = 604.0
+offset_right = 790.0
+offset_bottom = 668.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("2_vagqn")
+theme_override_font_sizes/font_size = 42
+text = "Close"
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_video_player_finished"]
+[connection signal="pressed" from="PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
