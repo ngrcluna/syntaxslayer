@@ -1,4 +1,11 @@
+# Godot generated files
 .godot/
-*.translation
-.mono/
-data_*/
+*.import
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
