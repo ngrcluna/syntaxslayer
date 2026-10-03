@@ -13,7 +13,6 @@ config_version=5
 config/name="Syntax Slayer"
 run/main_scene="uid://datpl4xwi7mn5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

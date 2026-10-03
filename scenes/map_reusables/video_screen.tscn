@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://88pnohcvvqeo"]
 
 [ext_resource type="Script" uid="uid://cvqtidslodt04" path="res://scenes/map_reusables/video_screen.gd" id="1_81t5l"]
-[ext_resource type="VideoStream" uid="uid://dr3jkxsg4v4yt" path="res://assets/videos/python/python_lesson1.ogv" id="2_a7w7c"]
+[ext_resource type="VideoStream" uid="uid://16gx0hl1a3pt" path="res://assets/videos/python/lesson1_python.ogv" id="2_a7w7c"]
 [ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_vagqn"]
 
 [node name="VideoScreen" type="CanvasLayer" unique_id=387482482]
@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_a7w7c")
+autoplay = true
 expand = true
 
 [node name="PlayPauseButton" type="Button" parent="." unique_id=569334980]

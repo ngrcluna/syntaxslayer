@@ -7,10 +7,11 @@ var can_move := true
 
 func _ready() -> void:
 	call_deferred("set_spawn_position")
-
+	
 func play_lay_down_animation() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
+	animated_sprite.flip_h = true
 	animated_sprite.play("lying_down")
 
 	if not animated_sprite.animation_finished.is_connected(_on_lay_down_finished):
@@ -57,7 +58,7 @@ func get_input():
 func _physics_process(_delta):
 	if not can_move:
 		velocity = Vector2.ZERO
-		return   # ← skip everything below, don't touch the animation
+		return  
 
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 

@@ -3449,7 +3449,7 @@ scale = Vector2(0.09, 0.09)
 
 [node name="Camera2D" type="Camera2D" parent="Girl Player" unique_id=976563536]
 position = Vector2(0.00019073486, 22.222382)
-zoom = Vector2(5, 5)
+zoom = Vector2(3.5, 3.5)
 
 [node name="HeadquartersExitSpawn" type="Marker2D" parent="." unique_id=1159433717]
 position = Vector2(190, 183)
@@ -3476,7 +3476,7 @@ position = Vector2(107, 105)
 shape = SubResource("RectangleShape2D_mho1w")
 
 [node name="ScannerSpawnPoint" type="Marker2D" parent="." unique_id=710738696]
-position = Vector2(116, 103)
+position = Vector2(112, 104)
 
 [node name="WatchVideo" type="Node2D" parent="." unique_id=2032539232]
 script = ExtResource("14_10mim")
