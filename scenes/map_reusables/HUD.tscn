@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d3ahh2ldlvvqi"]
+
+[ext_resource type="Script" uid="uid://cygugjdsvhqql" path="res://scenes/map_reusables/hud.gd" id="1_h422u"]
+[ext_resource type="Texture2D" uid="uid://b4fhftqglw2yd" path="res://assets/items/journal_placeholder.png" id="2_af3y3"]
+[ext_resource type="Texture2D" uid="uid://cj72dgq40v6o3" path="res://assets/items/compiler_placeholder.png" id="3_khmkn"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1700140300]
+layer = 100
+script = ExtResource("1_h422u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=27146366]
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+offset_left = -537.0
+offset_top = 2.0
+offset_bottom = 102.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="JournalButton" type="TextureButton" parent="HBoxContainer" unique_id=1302609759]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_af3y3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CompilerButton" type="TextureButton" parent="HBoxContainer" unique_id=1778657671]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_khmkn")
+ignore_texture_size = true
+stretch_mode = 0

@@ -3,6 +3,7 @@ extends Area2D
 @export_file("*.tscn") var destination_scene: String
 @export var destination_spawn: String
 @export var interaction_text: String = "Tap to Enter"
+
 @onready var interaction_label: Label = $Entrance
 
 var player_nearby: CharacterBody2D = null
@@ -11,6 +12,7 @@ var player_nearby: CharacterBody2D = null
 func _ready() -> void:
 	interaction_label.text = interaction_text
 	interaction_label.visible = false
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -38,11 +40,20 @@ func _on_input_event(
 			enter_door()
 
 	elif event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			enter_door()
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				enter_door()
 
 
 func enter_door() -> void:
+
 	interaction_label.visible = false
+
+	# Set where the player will appear
 	SpawnManager.spawn_name = destination_spawn
+
+	# IMPORTANT:
+	# Normal door entrance should NOT trigger lying_up.
+	SpawnManager.play_lying_up_on_spawn = false
+
 	get_tree().change_scene_to_file(destination_scene)

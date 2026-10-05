@@ -17,6 +17,9 @@
 [ext_resource type="Script" uid="uid://cad252dyfc0in" path="res://scenes/main/python_map/watch_video.gd" id="14_10mim"]
 [ext_resource type="Texture2D" uid="uid://dqyt3w48gihxb" path="res://assets/items/computer_placeholder.png" id="14_wclbr"]
 [ext_resource type="Texture2D" uid="uid://by7udepsflwcq" path="res://assets/items/computer_placeholder_pressed.png" id="15_10mim"]
+[ext_resource type="PackedScene" uid="uid://do3ybla3ixhse" path="res://scenes/map_reusables/desk_item.tscn" id="18_g8ecr"]
+[ext_resource type="Texture2D" uid="uid://b4fhftqglw2yd" path="res://assets/items/journal_placeholder.png" id="19_sv5yp"]
+[ext_resource type="Texture2D" uid="uid://cj72dgq40v6o3" path="res://assets/items/compiler_placeholder.png" id="20_s5np7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlxbw"]
 texture = ExtResource("9_387c4")
@@ -3365,10 +3368,10 @@ offset_above_head = Vector2(-80, -40)
 
 [node name="SpeechBubble" type="Panel" parent="Dialogue" unique_id=2110593046]
 anchors_preset = -1
-offset_left = 195.0
+offset_left = 452.0
 offset_top = 379.0
 offset_right = 1022.0
-offset_bottom = 505.0
+offset_bottom = 476.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_tlxbw")
 
 [node name="DialogueText" type="Label" parent="Dialogue/SpeechBubble" unique_id=242161076]
@@ -3376,13 +3379,13 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.042
-anchor_top = 0.2
+anchor_top = 0.111
 anchor_right = 0.056
-anchor_bottom = 0.207
-offset_left = 12.266014
-offset_top = -3.2000122
-offset_right = 723.688
-offset_bottom = 73.917984
+anchor_bottom = 0.2
+offset_left = 1.0599995
+offset_top = 5.600006
+offset_right = 509.48196
+offset_bottom = 54.921005
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("10_dquot")
 theme_override_font_sizes/font_size = 44
@@ -3409,10 +3412,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1295.0
-offset_top = -1093.0
-offset_right = 1021.0
-offset_bottom = 568.0
+offset_left = -1306.0
+offset_top = -1090.0
+offset_right = 1010.0
+offset_bottom = 571.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_4cknh")
@@ -3454,7 +3457,7 @@ zoom = Vector2(3.5, 3.5)
 [node name="HeadquartersExitSpawn" type="Marker2D" parent="." unique_id=1159433717]
 position = Vector2(190, 183)
 
-[node name="NPC" parent="." unique_id=1621445046 groups=["player"] instance=ExtResource("4_m8ery")]
+[node name="NPC" parent="." unique_id=1621445046 instance=ExtResource("4_m8ery")]
 position = Vector2(191, 94)
 scale = Vector2(0.05, 0.05)
 
@@ -3496,8 +3499,23 @@ stretch_mode = 0
 [node name="VideoWatchingSpawn" type="Marker2D" parent="." unique_id=1077602979]
 position = Vector2(271, 113)
 
+[node name="JournalItem" parent="." unique_id=2074306114 instance=ExtResource("18_g8ecr")]
+z_index = 2
+position = Vector2(200, 102)
+scale = Vector2(0.1, 0.1)
+item_texture = ExtResource("19_sv5yp")
+
+[node name="CompilerItem" parent="." unique_id=2030610336 instance=ExtResource("18_g8ecr")]
+z_index = 2
+position = Vector2(177, 102)
+scale = Vector2(0.1, 0.1)
+item_id = "compiler"
+item_texture = ExtResource("20_s5np7")
+
 [connection signal="pressed" from="Dialogue/TapButton" to="Dialogue" method="_on_tap_button_pressed"]
 [connection signal="body_entered" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_exited"]
 [connection signal="input_event" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_input_event"]
 [connection signal="pressed" from="WatchVideo/Computer" to="WatchVideo" method="_on_computer_pressed"]
+[connection signal="input_event" from="JournalItem" to="JournalItem" method="_on_input_event"]
+[connection signal="input_event" from="CompilerItem" to="CompilerItem" method="_on_input_event"]

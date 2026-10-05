@@ -19,6 +19,8 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 SpawnManager="*uid://boqw0or52j362"
 Global="*uid://c84ai0hunqw0b"
 VideoManager="*uid://b61hsf0rxodqg"
+Gameprogress="*uid://cgd4hpg1iuvqx"
+Hud="*uid://d3ahh2ldlvvqi"
 
 [display]
 
