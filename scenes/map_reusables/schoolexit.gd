@@ -2,8 +2,8 @@ extends Area2D
 
 @export_file("*.tscn") var destination_scene: String
 @export var destination_spawn: String
-@export var interaction_text: String = ""
-@onready var interaction_label: Label = $Exit
+@export var interaction_text: String = "Tap to Exit"
+@onready var interaction_label: Label = $SchoolExit
 
 var player_nearby: CharacterBody2D = null
 

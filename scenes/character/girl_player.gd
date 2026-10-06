@@ -41,16 +41,15 @@ func _on_lay_down_finished() -> void:
 # =========================================
 
 func set_spawn_position() -> void:
-
-	# Set the player's spawn position
 	if SpawnManager.spawn_name != "":
-		
-		var spawn_point = get_tree().current_scene.get_node_or_null(
-			SpawnManager.spawn_name
+		var spawn_point = get_tree().current_scene.find_child(
+			SpawnManager.spawn_name, true, false
 		)
 
 		if spawn_point:
 			global_position = spawn_point.global_position
+		else:
+			push_warning("Spawn point not found: " + SpawnManager.spawn_name)
 
 		SpawnManager.spawn_name = ""
 

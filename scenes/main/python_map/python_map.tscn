@@ -10748,10 +10748,10 @@ tile_map_data = PackedByteArray("AABBABEAAQAAAAUAAABBABIAAQAAAAYAAABBABMAAQAAAAc
 tile_set = SubResource("TileSet_182x5")
 
 [node name="SchoolDoor" parent="Buildings/School" unique_id=690962212 groups=["player"] instance=ExtResource("5_q051g")]
-position = Vector2(1269.9999, 407.5)
+position = Vector2(1270, 407.5)
 
 [node name="SchoolEntranceSpawn" type="Marker2D" parent="Buildings/School" unique_id=628491097]
-position = Vector2(1267.5, 435.00003)
+position = Vector2(1270, 407.50003)
 
 [node name="Cinema" type="TileMapLayer" parent="Buildings" unique_id=393239271]
 position = Vector2(67, -25)
@@ -10766,7 +10766,7 @@ tile_map_data = PackedByteArray("AABSAB4AAAAAAAAAAABSAB8AAAAAAAEAAABSACAAAAAAAAI
 tile_set = SubResource("TileSet_8t0qd")
 
 [node name="HQ Door" parent="Buildings/Headquarters" unique_id=1140139326 groups=["player"] instance=ExtResource("7_cb6n2")]
-position = Vector2(1515.5557, 671.11115)
+position = Vector2(1515.5555, 677.77783)
 scale = Vector2(1.1, 1.1)
 
 [node name="HQEntranceSpawn" type="Marker2D" parent="Buildings/Headquarters" unique_id=43449703]
@@ -10806,7 +10806,7 @@ position = Vector2(749, 291)
 scale = Vector2(0.09, 0.09)
 
 [node name="Camera2D" type="Camera2D" parent="Girl Player" unique_id=238563522]
-position = Vector2(-11.110413, -88.88907)
+position = Vector2(2.0980835e-05, -133.3335)
 zoom = Vector2(3.5, 3.5)
 
 [node name="Road" type="Node2D" parent="." unique_id=1672382645]

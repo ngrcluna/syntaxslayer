@@ -3451,7 +3451,7 @@ position = Vector2(189.99998, 180.99998)
 scale = Vector2(0.09, 0.09)
 
 [node name="Camera2D" type="Camera2D" parent="Girl Player" unique_id=976563536]
-position = Vector2(0.00019073486, 22.222382)
+position = Vector2(0.00019073486, -133.33318)
 zoom = Vector2(3.5, 3.5)
 
 [node name="HeadquartersExitSpawn" type="Marker2D" parent="." unique_id=1159433717]
@@ -3460,10 +3460,6 @@ position = Vector2(190, 183)
 [node name="NPC" parent="." unique_id=1621445046 instance=ExtResource("4_m8ery")]
 position = Vector2(191, 94)
 scale = Vector2(0.05, 0.05)
-
-[node name="Exit" parent="." unique_id=425686685 groups=["player"] instance=ExtResource("6_bavq5")]
-position = Vector2(191, 184)
-scale = Vector2(0.2, 0.2)
 
 [node name="KnowledgeScannerBed" type="TileMapLayer" parent="." unique_id=1519901793]
 scale = Vector2(0.15, 0.15)
@@ -3512,6 +3508,10 @@ scale = Vector2(0.1, 0.1)
 item_id = "compiler"
 item_texture = ExtResource("20_s5np7")
 
+[node name="HQExit" parent="." unique_id=425686685 instance=ExtResource("6_bavq5")]
+position = Vector2(190, 188)
+scale = Vector2(0.2, 0.2)
+
 [connection signal="pressed" from="Dialogue/TapButton" to="Dialogue" method="_on_tap_button_pressed"]
 [connection signal="body_entered" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_exited"]
@@ -3519,3 +3519,5 @@ item_texture = ExtResource("20_s5np7")
 [connection signal="pressed" from="WatchVideo/Computer" to="WatchVideo" method="_on_computer_pressed"]
 [connection signal="input_event" from="JournalItem" to="JournalItem" method="_on_input_event"]
 [connection signal="input_event" from="CompilerItem" to="CompilerItem" method="_on_input_event"]
+
+[editable path="HQExit"]
