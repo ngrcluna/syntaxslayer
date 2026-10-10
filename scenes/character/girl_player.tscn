@@ -255,6 +255,7 @@ height = 432.0
 [node name="Girl Player" type="CharacterBody2D" unique_id=2041596861]
 y_sort_enabled = true
 script = ExtResource("1_gniwl")
+speed = 200
 
 [node name="girl_player_animation" type="AnimatedSprite2D" parent="." unique_id=1043147793]
 scale = Vector2(0.5, 0.5)

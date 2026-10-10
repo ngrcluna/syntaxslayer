@@ -83,6 +83,7 @@ func start_dialogue() -> void:
 	tap_button.show()
 	set_dialogue_text(dialogue[dialogue_index])
 
+
 # AUTO-SIZE DIALOGUE TEXT
 func set_dialogue_text(text: String) -> void:
 	dialogue_text.text = text
@@ -176,7 +177,7 @@ func _on_tools_changed() -> void:
 		return
 	if Gameprogress.has_journal and Gameprogress.has_compiler:
 		tools_dialogue_played = true
-		talking = false          # force-reset in case an old dialogue is stuck
+		talking = false       
 		complete_journal()
 		start_dialogue.call_deferred()
 # END DIALOGUE
@@ -194,10 +195,14 @@ func handle_dialogue_finished() -> void:
 	match npc_state:
 		"first_visit":
 			print("Start Pre-Assessment")
+			Gameprogress.unlock_door("scanner_room") 
 		"pre_assessment_complete":
+			Gameprogress.lock_door("scanner_room")
 			print("Knowledge Scan Done")
+			Gameprogress.unlock_door("video_room")
 		"journal_access":
 			print("Journal and Compiler Unlocked")
+			Gameprogress.lock_door("video_room")
 		"journal_complete":
 			print("Start Stage Mission")
 		"school_complete":

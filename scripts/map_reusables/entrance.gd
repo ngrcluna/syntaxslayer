@@ -56,4 +56,5 @@ func enter_door() -> void:
 	# Normal door entrance should NOT trigger lying_up.
 	SpawnManager.play_lying_up_on_spawn = false
 
-	get_tree().change_scene_to_file(destination_scene)
+	FadeTransition.change_scene(destination_scene)
+	

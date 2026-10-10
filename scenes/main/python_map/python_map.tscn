@@ -10770,7 +10770,7 @@ position = Vector2(1515.5555, 677.77783)
 scale = Vector2(1.1, 1.1)
 
 [node name="HQEntranceSpawn" type="Marker2D" parent="Buildings/Headquarters" unique_id=43449703]
-position = Vector2(1515.5555, 708.8889)
+position = Vector2(1515.5555, 706.6667)
 
 [node name="Police" type="TileMapLayer" parent="Buildings" unique_id=2056723364]
 position = Vector2(-32, -25)
@@ -10802,7 +10802,7 @@ tile_set = SubResource("TileSet_s7cdv")
 [node name="Girl Player" parent="." unique_id=2041596861 groups=["player"] instance=ExtResource("2_hb46d")]
 z_index = 1
 y_sort_enabled = false
-position = Vector2(749, 291)
+position = Vector2(749, 290)
 scale = Vector2(0.09, 0.09)
 
 [node name="Camera2D" type="Camera2D" parent="Girl Player" unique_id=238563522]

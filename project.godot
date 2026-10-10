@@ -21,6 +21,7 @@ Global="*uid://c84ai0hunqw0b"
 VideoManager="*uid://b61hsf0rxodqg"
 Gameprogress="*uid://cgd4hpg1iuvqx"
 Hud="*uid://d3ahh2ldlvvqi"
+FadeTransition="*uid://blv81h306rl51"
 
 [display]
 

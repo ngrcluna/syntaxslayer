@@ -1,8 +1,7 @@
 extends Node2D
 
-
 var player_nearby: bool = false
-
+@export var tap_prompt: Node2D
 func _ready() -> void:
 	pass
 
@@ -18,6 +17,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if not player_nearby:
 		return
 	if event is InputEventScreenTouch and event.pressed:
+		if tap_prompt:
+			tap_prompt.hide_prompt()
 		_trigger_scan()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_trigger_scan()
