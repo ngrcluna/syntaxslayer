@@ -15,6 +15,4 @@ func _on_finish_button_pressed() -> void:
 	SpawnManager.spawn_name = "ScannerSpawnPoint"
 	SpawnManager.play_lying_up_on_spawn = true
 
-	get_tree().change_scene_to_file(
-		"res://scenes/main/python_map/headquarters.tscn"
-	)
+	FadeTransition.change_scene("res://scenes/main/python_map/headquarters.tscn")

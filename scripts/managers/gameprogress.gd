@@ -3,7 +3,6 @@ extends Node
 signal tools_changed
 signal door_unlocked(door_id: String)  
 signal door_locked(door_id: String)
-
 var current_language := "Python"
 var current_stage := 1
 var unlocked_doors := {} 
@@ -12,6 +11,8 @@ var completed_videos = {}
 var received_journal_compiler = {}
 var completed_stages = {}
 var completed_knowledge_checks = {}
+
+var met_npc_intro := false
 
 # Tools: global, collected once, kept for every language
 var has_journal := false

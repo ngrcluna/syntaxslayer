@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # DIALOGUE STATE
-
+signal dialogue_started
 signal dialogue_finished
 var dialogue = []
 var dialogue_index = 0
@@ -63,7 +63,24 @@ func update_npc_state() -> void:
 	# 6. Everything for this stage is complete
 	else:
 		npc_state = "post_assessment_complete"
+# Runs tags like [hide_arrow] at the start of a line, returns the clean text
+func show_line(line: String) -> void:
+	var regex := RegEx.new()
+	regex.compile("\\[(\\w+)\\]")
+	for m in regex.search_all(line):
+		run_tag(m.get_string(1))
+	set_dialogue_text(regex.sub(line, "", true).strip_edges())
 
+func run_tag(tag: String) -> void:
+	if not npc_node:
+		return
+	match tag:
+		"show_arrow":
+			if npc_node.has_method("show_guide_arrow"):
+				npc_node.show_guide_arrow()
+		"hide_arrow":
+			if npc_node.has_method("hide_guide_arrow"):
+				npc_node.hide_guide_arrow()
 # READY
 func _ready() -> void:
 	speech_bubble.hide()
@@ -81,8 +98,8 @@ func start_dialogue() -> void:
 	set_dialogue()
 	speech_bubble.show()
 	tap_button.show()
-	set_dialogue_text(dialogue[dialogue_index])
-
+	dialogue_started.emit()
+	show_line(dialogue[dialogue_index])
 
 # AUTO-SIZE DIALOGUE TEXT
 func set_dialogue_text(text: String) -> void:
@@ -111,18 +128,18 @@ func set_dialogue() -> void:
 		# FIRST VISIT
 		"first_visit":
 			dialogue = [
-				"Hey, Slayer! Welcome to Headquarters!",
-				"Before you explore, we need to scan your programming knowledge.",
-				"⮟ See the Knowledge Scanner on the left? Proceed there.",
-				"And come back here. No pressure, just do your best!"
+			"[hide_arrow]Hey, Slayer! Welcome to Headquarters!",
+			"Before you explore, we need to scan your programming knowledge.",
+			"⮟ See the Knowledge Scanner on the left? Proceed there.",
+			"And come back here. No pressure, just do your best!"
 			]
 		# AFTER KNOWLEDGE SCAN
 		"pre_assessment_complete":
 			dialogue = [
-				"Scan complete! I need to show you something.",
+				"[show_arrow] Scan complete! I need to show you something.",
 				"Head to the computer in the room on the right ⮟",
 				"Watch the video there. It'll teach you what you need to know.",
-				"When you're finished, come back to me. I've got something for you that'll help you on your journey."
+				"When you're finished, come back to me. I've got something for you that'll help you on your journey.[hide_arrow]"
 			]
 		# AFTER VIDEO
 		"journal_access":
@@ -130,7 +147,7 @@ func set_dialogue() -> void:
 				"Nice work!",
 				"This is your journal and compiler on my desk ⮟",
 				"Tap them to pick them up. You can open them anytime from the top right.",
-				"Your compiler can help you test your code during battles."
+				"Your compiler can help you test your code during battles.[hide_arrow]"
 			]
 		# AFTER JOURNAL + COMPILER
 		"journal_complete":
@@ -167,7 +184,7 @@ func _on_tap_button_pressed() -> void:
 		return
 	dialogue_index += 1
 	if dialogue_index < dialogue.size():
-		set_dialogue_text(dialogue[dialogue_index])
+		show_line(dialogue[dialogue_index])
 	else:
 		end_dialogue()
 var tools_dialogue_played := false
@@ -194,6 +211,7 @@ func end_dialogue() -> void:
 func handle_dialogue_finished() -> void:
 	match npc_state:
 		"first_visit":
+			Gameprogress.met_npc_intro = true
 			print("Start Pre-Assessment")
 			Gameprogress.unlock_door("scanner_room") 
 		"pre_assessment_complete":

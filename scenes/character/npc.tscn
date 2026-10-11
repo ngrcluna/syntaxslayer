@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqq54vnie1r80" path="res://scenes/character/npc.gd" id="1_7ik4o"]
 [ext_resource type="Texture2D" uid="uid://bt2we4chk43pq" path="res://assets/characters/python_npc.png" id="2_7ik4o"]
+[ext_resource type="Texture2D" uid="uid://bshde02ilxf2i" path="res://assets/tiles/arrow_bouncing.png" id="3_caa8t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_182x5"]
 radius = 81.0
@@ -42,7 +43,71 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik4o"]
-size = Vector2(1485, 749.75)
+size = Vector2(1428, 585.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdncq"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(0, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8gkg"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(13, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqc3h"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(26, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht03h"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(39, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dhs0"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(52, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tppdb"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(65, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkpy1"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(78, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8imo"]
+atlas = ExtResource("3_caa8t")
+region = Rect2(91, 0, 13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_182x5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8gkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqc3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht03h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dhs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tppdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkpy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8imo")
+}],
+"loop": 1,
+"name": &"arrow_bouncing",
+"speed": 10.0
+}]
 
 [node name="NPC" type="CharacterBody2D" unique_id=1621445046]
 script = ExtResource("1_7ik4o")
@@ -59,8 +124,19 @@ frame_progress = 0.77521497
 [node name="detection_area" type="Area2D" parent="." unique_id=899624432]
 
 [node name="detectionarea" type="CollisionShape2D" parent="detection_area" unique_id=1836349767]
-position = Vector2(24.5, 385.125)
+position = Vector2(-4, 303.125)
 shape = SubResource("RectangleShape2D_7ik4o")
+
+[node name="GuideArrow" type="Node2D" parent="." unique_id=1111923188]
+scale = Vector2(1.25, 1.25)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GuideArrow" unique_id=909644290]
+z_index = 10
+position = Vector2(3.2000008, -403.2)
+scale = Vector2(22.153849, 23.468752)
+sprite_frames = SubResource("SpriteFrames_182x5")
+animation = &"arrow_bouncing"
+frame_progress = 0.56335413
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
