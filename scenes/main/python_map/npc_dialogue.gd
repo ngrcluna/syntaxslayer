@@ -136,7 +136,7 @@ func set_dialogue() -> void:
 		# AFTER KNOWLEDGE SCAN
 		"pre_assessment_complete":
 			dialogue = [
-				"[show_arrow] Scan complete! I need to show you something.",
+				"Scan complete! I need to show you something.",
 				"Head to the computer in the room on the right ⮟",
 				"Watch the video there. It'll teach you what you need to know.",
 				"When you're finished, come back to me. I've got something for you that'll help you on your journey.[hide_arrow]"

@@ -34,17 +34,7 @@ func open(stream: VideoStream) -> void:
 	video.play()
 	play_button.text = "Pause"
 
-func _on_video_player_finished() -> void:
 
-	var key = "%s_stage_%d" % [
-		Gameprogress.current_language,
-		Gameprogress.current_stage
-	]
-
-	Gameprogress.completed_videos[key] = true
-
-	play_button.text = "Play again"
-	finished.emit()
 
 func _on_play_pause_button_pressed() -> void:
 	if video.is_playing():
@@ -53,15 +43,14 @@ func _on_play_pause_button_pressed() -> void:
 	else:
 		video.play()
 		play_button.text = "Pause"
+		
+func _on_video_player_finished() -> void:
+	Gameprogress.complete_video()
+	play_button.text = "Play again"
+	finished.emit()
 
 func _on_close_button_pressed() -> void:
-
-	# TEMPORARY
-	var key = "%s_stage_%d" % [
-		Gameprogress.current_language,
-		Gameprogress.current_stage
-	]
-	Gameprogress.completed_videos[key] = true
-
+	# TEMPORARY: also hides the arrow when closed early
+	Gameprogress.complete_video()
 	SpawnManager.spawn_name = "girl"
 	get_tree().change_scene_to_file("res://scenes/main/python_map/headquarters.tscn")

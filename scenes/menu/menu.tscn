@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca8k05iethtkv"]
 
 [ext_resource type="Script" uid="uid://mocv7ligen44" path="res://scripts/main_menu/menu.gd" id="1_f2fum"]
-[ext_resource type="Texture2D" uid="uid://cxyspioepc03c" path="res://assets/background/tempbg.png" id="2_037ec"]
+[ext_resource type="Texture2D" uid="uid://b2erevk8c4gr7" path="res://assets/background/startscreen.png" id="2_3y2rt"]
 [ext_resource type="Texture2D" uid="uid://bqfyq52cfgxbx" path="res://assets/ui/playbtn.png" id="3_y1o0p"]
 [ext_resource type="Texture2D" uid="uid://bebhbd6qorsrb" path="res://assets/ui/playbtn_pressed.png" id="4_r8yej"]
 [ext_resource type="Texture2D" uid="uid://b1srfgcdlbxx" path="res://assets/ui/exitbtn.png" id="5_3y2rt"]
@@ -30,16 +30,16 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_037ec")
+texture = ExtResource("2_3y2rt")
 expand_mode = 1
 
 [node name="Play Button" type="TextureButton" parent="." unique_id=34150350]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.863
+anchor_top = 0.763
 anchor_right = 0.5
-anchor_bottom = 0.863
+anchor_bottom = 0.763
 offset_left = -221.0
 offset_top = -128.0
 offset_right = 170.81812

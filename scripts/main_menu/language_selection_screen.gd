@@ -9,9 +9,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_python_button_pressed() -> void:
-	selected_language = "Python"
+	selected_language = "python"
 	save_language_selection(selected_language)
-	get_tree().change_scene_to_file("res://scenes/main/python_map/python_map.tscn")
+	FadeTransition.change_scene("res://scenes/main/python_map/python_map.tscn")
 
 
 func _on_cpp_button_pressed() -> void:

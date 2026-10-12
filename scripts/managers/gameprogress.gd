@@ -32,7 +32,9 @@ func lock_door(door_id: String) -> void:
 		return
 	unlocked_doors[door_id] = false
 	door_locked.emit(door_id)
-
+	
+	
+# COMPILERRRR AND JOURNAAAAAAL
 func collect_tool(tool_name: String) -> void:
 	match tool_name:
 		"journal":
@@ -45,3 +47,17 @@ func collect_tool(tool_name: String) -> void:
 		received_journal_compiler[key] = true
 
 	tools_changed.emit()
+	
+	
+# VIDEOOOOOOOOO
+signal video_completed
+
+func stage_key(language := current_language, stage := current_stage) -> String:
+	return "%s_stage_%d" % [language, stage]
+
+func is_video_completed() -> bool:
+	return completed_videos.get(stage_key(), false)
+
+func complete_video() -> void:
+	completed_videos[stage_key()] = true
+	video_completed.emit()
