@@ -18,14 +18,14 @@ var met_npc_intro := false
 var has_journal := false
 var has_compiler := false
 
+func is_door_unlocked(door_id: String) -> bool:
+	return unlocked_doors.get(door_id, false)
+
 func unlock_door(door_id: String) -> void:
 	if unlocked_doors.get(door_id, false):
 		return
 	unlocked_doors[door_id] = true
 	door_unlocked.emit(door_id)
-
-func is_door_unlocked(door_id: String) -> bool:
-	return unlocked_doors.get(door_id, false)
 
 func lock_door(door_id: String) -> void:
 	if not unlocked_doors.get(door_id, false):

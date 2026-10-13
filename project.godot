@@ -22,6 +22,7 @@ VideoManager="*uid://b61hsf0rxodqg"
 Gameprogress="*uid://cgd4hpg1iuvqx"
 Hud="*uid://d3ahh2ldlvvqi"
 FadeTransition="*uid://blv81h306rl51"
+Database="*uid://c4e6eae7b3cjb"
 
 [display]
 

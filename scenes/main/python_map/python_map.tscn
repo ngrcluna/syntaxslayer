@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://1x151ktfs0mw" path="res://assets/buildings/python/bank.png" id="9_v2xv1"]
 [ext_resource type="Texture2D" uid="uid://d32jw5l6s4f1m" path="res://assets/buildings/python/shop.png" id="10_cb6n2"]
 [ext_resource type="Texture2D" uid="uid://612cu1px7rht" path="res://assets/items/cars.png" id="15_yxjbt"]
-[ext_resource type="Texture2D" uid="uid://dce06xhym5jen" path="res://assets/tiles/citymiscs.png" id="18_cb6n2"]
+[ext_resource type="Texture2D" uid="uid://dfv4lehwt4wqm" path="res://assets/tiles/citymiscs.png" id="18_cb6n2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avdbg"]
 texture = ExtResource("3_cb6n2")

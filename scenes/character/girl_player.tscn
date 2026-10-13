@@ -265,7 +265,7 @@ speed = 200
 [node name="girl_player_animation" type="AnimatedSprite2D" parent="." unique_id=1043147793]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_mho1w")
-animation = &"girl_idle"
+animation = &"girl_openingeyes"
 
 [node name="girl_collisioncapsule" type="CollisionShape2D" parent="." unique_id=398873838]
 y_sort_enabled = true
