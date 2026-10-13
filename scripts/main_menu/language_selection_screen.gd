@@ -5,8 +5,6 @@ var selected_language: String = ""
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
-	pass
 
 func _on_python_button_pressed() -> void:
 	selected_language = "python"

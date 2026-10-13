@@ -41,7 +41,6 @@ func _on_right_arrow_pressed() -> void:
 	update_character()
 
 func _on_save_button_pressed() -> void:
-	var start = Time.get_ticks_msec()
 	get_tree().change_scene_to_file("res://scenes/language_selection/language_selection_screen.tscn")
 
 func _on_clear_button_pressed() -> void:
