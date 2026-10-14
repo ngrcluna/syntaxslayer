@@ -159,7 +159,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"girl_downward",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,7 +201,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"girl_upward",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -265,7 +265,8 @@ speed = 200
 [node name="girl_player_animation" type="AnimatedSprite2D" parent="." unique_id=1043147793]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_mho1w")
-animation = &"girl_openingeyes"
+animation = &"girl_downward"
+frame_progress = 0.49015537
 
 [node name="girl_collisioncapsule" type="CollisionShape2D" parent="." unique_id=398873838]
 y_sort_enabled = true

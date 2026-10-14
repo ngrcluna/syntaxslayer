@@ -51,14 +51,18 @@ const MIN_FONT := 16
 
 func _fit_question_text() -> void:
 	var font: Font = question_text.get_theme_font("font")
-	var panel: Control = question_text.get_parent()  
-	var box := panel.size - Vector2(60, 40)         
+	var spacing: int = question_text.get_theme_constant("line_spacing")
+	var box: Vector2 = question_text.size
+	var txt: String = question_text.text.strip_edges()
+	question_text.text = txt
 
 	var chosen := MIN_FONT
 	for s in range(MAX_FONT, MIN_FONT - 1, -2):
 		var needed := font.get_multiline_string_size(
-			question_text.text, HORIZONTAL_ALIGNMENT_LEFT, box.x, s)
-		if needed.y <= box.y:
+			txt, HORIZONTAL_ALIGNMENT_LEFT, box.x, s)
+		var lines := int(round(needed.y / font.get_height(s)))
+		var total_h: float = needed.y + spacing * maxi(lines - 1, 0)
+		if total_h <= box.y - 8:   # 8px safety margin
 			chosen = s
 			break
 	question_text.add_theme_font_size_override("font_size", chosen)
@@ -153,6 +157,7 @@ func _show_results() -> void:
 			text += "- %s\n" % Database.get_advice(topic)
 
 	question_text.text = text
+	await get_tree().process_frame
 	_fit_question_text()
 
 	Database.submit_attempt({
