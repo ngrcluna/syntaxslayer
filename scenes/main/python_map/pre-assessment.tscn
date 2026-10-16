@@ -16,9 +16,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_182x5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stlyd"]
-bg_color = Color(0, 0, 0, 0)
-
 [node name="PreAssessment" type="Control" unique_id=930089186]
 layout_mode = 3
 anchors_preset = 15
@@ -168,7 +165,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_31ug1")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_stlyd")
 text = "  A. "
 alignment = 0
 

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ca8k05iethtkv"]
 
 [ext_resource type="Script" uid="uid://mocv7ligen44" path="res://scripts/main_menu/menu.gd" id="1_f2fum"]
-[ext_resource type="Texture2D" uid="uid://b2erevk8c4gr7" path="res://assets/background/startscreen.png" id="2_3y2rt"]
+[ext_resource type="Texture2D" uid="uid://64c0w5827ipr" path="res://assets/background/start.png" id="2_t0a87"]
 [ext_resource type="Texture2D" uid="uid://bqfyq52cfgxbx" path="res://assets/ui/playbtn.png" id="3_y1o0p"]
 [ext_resource type="Texture2D" uid="uid://bebhbd6qorsrb" path="res://assets/ui/playbtn_pressed.png" id="4_r8yej"]
 [ext_resource type="Texture2D" uid="uid://b1srfgcdlbxx" path="res://assets/ui/exitbtn.png" id="5_3y2rt"]
 [ext_resource type="Texture2D" uid="uid://dqd3bxwvpnow8" path="res://assets/ui/exitbtn_pressed.png" id="6_t0a87"]
 [ext_resource type="Texture2D" uid="uid://fvmff7w1g2cn" path="res://assets/ui/settingsbtn.png" id="7_qo0fc"]
+[ext_resource type="Texture2D" uid="uid://c8tv67bpsggyu" path="res://assets/ui/settingsbtn_pressed.png" id="8_t0a87"]
 
 [node name="Menu" type="Control" unique_id=2105983345]
 layout_mode = 3
@@ -30,7 +31,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_3y2rt")
+texture = ExtResource("2_t0a87")
 expand_mode = 1
 
 [node name="Play Button" type="TextureButton" parent="." unique_id=34150350]
@@ -50,6 +51,8 @@ scale = Vector2(1.1, 1.1)
 offset_transform_position = Vector2(0, -0.54)
 texture_normal = ExtResource("3_y1o0p")
 texture_pressed = ExtResource("4_r8yej")
+texture_hover = ExtResource("4_r8yej")
+texture_focused = ExtResource("4_r8yej")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -61,6 +64,8 @@ offset_right = 117.0
 offset_bottom = 701.0
 texture_normal = ExtResource("5_3y2rt")
 texture_pressed = ExtResource("6_t0a87")
+texture_hover = ExtResource("6_t0a87")
+texture_focused = ExtResource("6_t0a87")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -71,7 +76,9 @@ offset_top = 611.0
 offset_right = 1255.0
 offset_bottom = 701.0
 texture_normal = ExtResource("7_qo0fc")
+texture_pressed = ExtResource("8_t0a87")
+texture_hover = ExtResource("8_t0a87")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="Play Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]

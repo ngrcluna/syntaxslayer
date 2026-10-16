@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxyspioepc03c"
-path="res://.godot/imported/tempbg.png-236d6ac45e609b36de8c04d027a30d2d.ctex"
+uid="uid://djowysu61g0d5"
+path="res://.godot/imported/girl_close.png-ea898e4188065986ef891d8d17c8518b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/tempbg.png"
-dest_files=["res://.godot/imported/tempbg.png-236d6ac45e609b36de8c04d027a30d2d.ctex"]
+source_file="res://assets/characters/girl_close.png"
+dest_files=["res://.godot/imported/girl_close.png-ea898e4188065986ef891d8d17c8518b.ctex"]
 
 [params]
 

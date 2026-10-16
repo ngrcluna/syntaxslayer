@@ -2,28 +2,28 @@
 
 [ext_resource type="Script" uid="uid://cydnqqupm03x5" path="res://scenes/character/girl_player.gd" id="1_gniwl"]
 [ext_resource type="Texture2D" uid="uid://dxivd60eks8p4" path="res://assets/characters/girlcharacter.png" id="2_uuamu"]
-[ext_resource type="Texture2D" uid="uid://dcfrv11i8p1ho" path="res://assets/characters/girl_blink.png" id="3_stlyd"]
 [ext_resource type="Texture2D" uid="uid://c7gyq2ejatqoy" path="res://assets/characters/girl_lyingup.png" id="4_stlyd"]
+[ext_resource type="Texture2D" uid="uid://djowysu61g0d5" path="res://assets/characters/girl_close.png" id="4_xx16l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6a1v"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(0, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(0, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4jgk"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(400, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(682, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8eyb"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(800, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(1364, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbev1"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(1200, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(0, 682, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aa8uy"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(1600, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(682, 682, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gniwl"]
 atlas = ExtResource("2_uuamu")
@@ -42,24 +42,24 @@ atlas = ExtResource("2_uuamu")
 region = Rect2(1364, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jift1"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(1600, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(682, 682, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2pw8"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(1200, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(0, 682, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_navgc"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(800, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(1364, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4368"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(400, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(682, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07x55"]
-atlas = ExtResource("3_stlyd")
-region = Rect2(0, 0, 400, 550)
+atlas = ExtResource("4_xx16l")
+region = Rect2(0, 0, 682, 682)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xx16l"]
 atlas = ExtResource("2_uuamu")
@@ -145,7 +145,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"girl_closingeyes",
-"speed": 11.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -187,7 +187,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"girl_openingeyes",
-"speed": 11.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -255,7 +255,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_182x5"]
 radius = 134.0
-height = 432.0
+height = 364.0
 
 [node name="Girl Player" type="CharacterBody2D" unique_id=2041596861]
 y_sort_enabled = true
@@ -263,13 +263,15 @@ script = ExtResource("1_gniwl")
 speed = 200
 
 [node name="girl_player_animation" type="AnimatedSprite2D" parent="." unique_id=1043147793]
-scale = Vector2(0.5, 0.5)
+position = Vector2(1.25, 3.75)
+scale = Vector2(0.521261, 0.52272725)
 sprite_frames = SubResource("SpriteFrames_mho1w")
-animation = &"girl_downward"
-frame_progress = 0.49015537
+animation = &"girl_closingeyes"
+frame = 4
+frame_progress = 1.0
 
 [node name="girl_collisioncapsule" type="CollisionShape2D" parent="." unique_id=398873838]
 y_sort_enabled = true
-position = Vector2(3, 19)
+position = Vector2(-2, 36)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_182x5")

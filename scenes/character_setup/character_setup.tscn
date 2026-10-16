@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0cal54bcqjcy" path="res://assets/background/customizationbg.jpeg" id="1_qqsgj"]
 [ext_resource type="Texture2D" uid="uid://dtfpjxi7o8fcf" path="res://assets/icons/platform.png" id="2_r86bo"]
 [ext_resource type="Texture2D" uid="uid://dybsnykdss47g" path="res://assets/icons/left_arrow.png" id="3_0svtq"]
+[ext_resource type="Texture2D" uid="uid://c5krfeq1iocl7" path="res://assets/ui/character_selection.png" id="3_hbucj"]
 [ext_resource type="Texture2D" uid="uid://bn66lqyig5fc0" path="res://assets/ui/arrowleftpressed.png" id="4_0uer6"]
 [ext_resource type="Texture2D" uid="uid://fcx321ov42yl" path="res://assets/icons/right_arrow.png" id="4_h3ffu"]
 [ext_resource type="Texture2D" uid="uid://gh57mvp0er1g" path="res://assets/characters/girl_idle.png" id="5_0uer6"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://3v3yi0uh6i5w" path="res://assets/ui/info_txt.png" id="9_eqlvj"]
 [ext_resource type="Texture2D" uid="uid://da5pg8jw3nvbg" path="res://assets/ui/inputbox.png" id="9_ymiw7"]
 [ext_resource type="Texture2D" uid="uid://dulie71xuoeib" path="res://assets/ui/backbtn_pressed.png" id="10_c67pi"]
-[ext_resource type="Texture2D" uid="uid://crxisfbappn84" path="res://assets/ui/character_setuptxt.png" id="12_eqlvj"]
 [ext_resource type="Texture2D" uid="uid://b4jg0fof04rrs" path="res://assets/ui/savebtn.png" id="13_0gcbn"]
 [ext_resource type="Texture2D" uid="uid://dd5xqqn55lg3f" path="res://assets/ui/clearbtn.png" id="14_6lbhi"]
 [ext_resource type="Texture2D" uid="uid://d3w0swmi3a8wb" path="res://assets/ui/clearbtn_pressed.png" id="15_fc7dl"]
@@ -51,11 +51,11 @@ expand_mode = 1
 
 [node name="Set up Text" type="TextureRect" parent="." unique_id=1502247107]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 49.0
-offset_right = 557.0
-offset_bottom = 140.0
-texture = ExtResource("12_eqlvj")
+offset_left = 60.0
+offset_top = 53.0
+offset_right = 570.0
+offset_bottom = 144.0
+texture = ExtResource("3_hbucj")
 expand_mode = 1
 
 [node name="Platform" type="TextureRect" parent="." unique_id=2045199983]
@@ -144,9 +144,10 @@ anchor_left = 0.924
 anchor_top = 0.453
 anchor_right = 0.939
 anchor_bottom = 0.672
-offset_left = -577.0
-offset_top = -241.16
-offset_bottom = 102.08002
+offset_left = -576.72
+offset_top = -217.16
+offset_right = 0.2800293
+offset_bottom = 36.160004
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("8_6eum7")
@@ -159,9 +160,10 @@ anchor_left = 0.816
 anchor_top = 0.169
 anchor_right = 0.831
 anchor_bottom = 0.17
-offset_left = -275.0
-offset_top = 13.499992
-offset_bottom = 78.49999
+offset_left = -277.47998
+offset_top = 33.32
+offset_right = -2.4799805
+offset_bottom = 98.32
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_eqlvj")
@@ -175,9 +177,9 @@ anchor_top = 0.265
 anchor_right = 0.685
 anchor_bottom = 0.276
 offset_left = -116.95996
-offset_top = 34.119995
+offset_top = 55.200012
 offset_right = 133.04004
-offset_bottom = 59.119995
+offset_bottom = 80.20001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
@@ -192,10 +194,10 @@ anchor_left = 0.908
 anchor_top = 0.331
 anchor_right = 0.954
 anchor_bottom = 0.346
-offset_left = -505.24
-offset_top = 29.679993
-offset_right = -59.119995
-offset_bottom = 84.67999
+offset_left = -508.24
+offset_top = 57.679993
+offset_right = -62.119995
+offset_bottom = 112.67999
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_ymiw7")
@@ -217,14 +219,14 @@ max_length = 15
 [node name="Clear Button" type="TextureButton" parent="." unique_id=274158817]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.691
-anchor_top = 0.837
-anchor_right = 0.691
-anchor_bottom = 0.846
-offset_left = -172.47998
-offset_top = -184.64001
-offset_right = -1.4799805
-offset_bottom = -125.119995
+anchor_left = 0.624
+anchor_top = 0.547
+anchor_right = 0.624
+anchor_bottom = 0.555
+offset_left = -80.72003
+offset_top = 3.1600037
+offset_right = 86.27997
+offset_bottom = 55.399994
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("14_6lbhi")
@@ -236,16 +238,16 @@ stretch_mode = 0
 [node name="Save Button" type="TextureButton" parent="." unique_id=892297000]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.864
-anchor_top = 0.9
-anchor_right = 0.864
-anchor_bottom = 0.911
-offset_left = -164.92004
-offset_top = -228.92004
-offset_right = -2.920044
-offset_bottom = -171.91998
+anchor_left = 0.871
+anchor_top = 0.554
+anchor_right = 0.871
+anchor_bottom = 0.554
+offset_left = -165.88
+offset_top = -0.8800049
+offset_right = -3.880005
+offset_bottom = 56.120056
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 texture_normal = ExtResource("13_0gcbn")
 texture_pressed = ExtResource("6_6lbhi")
 texture_hover = ExtResource("9_ak2ck")

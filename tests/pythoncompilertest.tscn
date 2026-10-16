@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://civvkbrs88hpq"]
+
+[ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_6wm5v"]
+[ext_resource type="Script" uid="uid://ccmb4wmaehyrn" path="res://tests/python_compiler_test.gd" id="1_crfle"]
+
+[node name="PythonCompilerTest" type="Control" unique_id=28563228]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_crfle")
+
+[node name="InputBox" type="TextEdit" parent="." unique_id=1456467895]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 8.0
+offset_right = 1279.0
+offset_bottom = 328.0
+
+[node name="CodeEditor" type="TextEdit" parent="." unique_id=1467082178]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 7.0
+offset_right = 595.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RunButton" type="Button" parent="." unique_id=1748998846]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 390.0
+offset_right = 500.0
+offset_bottom = 468.0
+theme_override_fonts/font = ExtResource("1_6wm5v")
+theme_override_font_sizes/font_size = 60
+text = "RUN"
+
+[node name="OutputPanel" type="RichTextLabel" parent="." unique_id=928527751]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 379.0
+offset_right = 1187.0
+offset_bottom = 588.0

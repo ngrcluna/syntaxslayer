@@ -1,4 +1,4 @@
 extends Control
 
-func _on_new_game_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/slot_selection.tscn")
+func _on_play_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/character_setup/character_setup.tscn")

@@ -46,7 +46,7 @@ func _ready() -> void:
 	_show_question()
 
 # Adaptive Question Text Size. ADAPTIVE???!!!
-const MAX_FONT := 60
+const MAX_FONT := 50
 const MIN_FONT := 16
 
 func _fit_question_text() -> void:
@@ -144,6 +144,7 @@ func _show_results() -> void:
 		b.hide()
 	next_button.hide()
 	finish_button.show()
+	$QuizPanel/QuestionPanel.self_modulate.a = 0.0
 
 	var total = questions.size()
 	var percent = int(float(score) / total * 100.0)
