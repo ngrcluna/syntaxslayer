@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cgne4chls2fsf"]
+
+[ext_resource type="Texture2D" uid="uid://b1ts7i77fed2d" path="res://assets/tiles/hq_roomdoor.png" id="1_6opc4"]
+[ext_resource type="Script" uid="uid://dn1t738aa4tgq" path="res://scripts/map_reusables/videodoor.gd" id="1_42g2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42g2l"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(0, 0, 48, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suhmt"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(48, 0, 48, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u52x1"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(96, 0, 48, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en6u1"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(144, 0, 48, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6ros"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(192, 0, 48, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkucp"]
+atlas = ExtResource("1_6opc4")
+region = Rect2(240, 0, 48, 152)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls2ww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42g2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suhmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u52x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en6u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6ros")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkucp")
+}],
+"loop": 0,
+"name": &"vidroom_open",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_182x5"]
+size = Vector2(44, 153)
+
+[node name="Videodoor" type="StaticBody2D" unique_id=1946295289]
+script = ExtResource("1_42g2l")
+
+[node name="VidDoor" type="AnimatedSprite2D" parent="." unique_id=845731769]
+position = Vector2(12, 0)
+scale = Vector2(0.5, 1)
+sprite_frames = SubResource("SpriteFrames_ls2ww")
+animation = &"vidroom_open"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1295913117]
+position = Vector2(11, -0.5)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_182x5")

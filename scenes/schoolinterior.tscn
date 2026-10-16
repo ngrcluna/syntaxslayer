@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvvxgoilykpea"]
+
+[ext_resource type="Script" uid="uid://c0tfp64eonv5f" path="res://scenes/battle_system/battletrigger.gd" id="11_lpm1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln83e"]
+radius = 26.172504
+
+[node name="schoolinterior" type="Node2D" unique_id=1610597221]
+
+[node name="battletrigger" type="Area2D" parent="." unique_id=1167266513]
+collision_layer = 2
+script = ExtResource("11_lpm1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battletrigger" unique_id=1864409864]
+position = Vector2(304, -165)
+shape = SubResource("CircleShape2D_ln83e")
+
+[node name="encounter" type="AudioStreamPlayer2D" parent="battletrigger" unique_id=1894474648]

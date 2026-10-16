@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c84xgi3hj4k7h"]
+
+[ext_resource type="Script" uid="uid://cb0rd58mo2i38" path="res://scripts/map_reusables/guide_arrow.gd" id="1_in021"]
+[ext_resource type="Texture2D" uid="uid://djms858u8cokm" path="res://assets/tiles/tap_with_arrow.png" id="2_dlx6p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vidnr"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(0, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahnnn"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(13, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3dbd"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(26, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnrvo"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(39, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b58yi"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(52, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o3bk"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(65, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj702"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(78, 0, 13, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6lay"]
+atlas = ExtResource("2_dlx6p")
+region = Rect2(91, 0, 13, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mho1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vidnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahnnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3dbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnrvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b58yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o3bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj702")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6lay")
+}],
+"loop": 1,
+"name": &"tap_bouncing",
+"speed": 7.0
+}]
+
+[node name="GuideArrow" type="Node2D" unique_id=1228553197]
+script = ExtResource("1_in021")
+
+[node name="arrow_sprite" type="AnimatedSprite2D" parent="." unique_id=1532733783]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mho1w")
+animation = &"tap_bouncing"
+frame_progress = 0.6972998

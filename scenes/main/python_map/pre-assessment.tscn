@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://bkjalv70o38wb"]
+
+[ext_resource type="Script" uid="uid://1xateuvkd6np" path="res://scripts/quiz/pre_assessment.gd" id="1_ik3la"]
+[ext_resource type="Texture2D" uid="uid://bjgsb7c1s3e05" path="res://assets/background/knowledgescan_bg.png" id="1_o3k8x"]
+[ext_resource type="Texture2D" uid="uid://cst1vd18uoy83" path="res://assets/ui/knowledgescan_title.png" id="2_ik3la"]
+[ext_resource type="Texture2D" uid="uid://cseqgfeuemw0a" path="res://assets/ui/finishbtn.png" id="3_yejmf"]
+[ext_resource type="Texture2D" uid="uid://ct4m6wi3fa2v1" path="res://assets/ui/finishbtn_pressed.png" id="4_j6v2k"]
+[ext_resource type="Texture2D" uid="uid://bxdrsloifqs8r" path="res://assets/ui/finishbtn_hover.png" id="5_kp5pm"]
+[ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="7_31ug1"]
+[ext_resource type="Texture2D" uid="uid://bybm7hubpmoo7" path="res://assets/icons/python_icon.png" id="8_g12d6"]
+[ext_resource type="Texture2D" uid="uid://l0atn2jltehw" path="res://assets/background/question_panel.png" id="9_vy0iw"]
+[ext_resource type="Texture2D" uid="uid://cwj2jhup53xoo" path="res://assets/ui/nextbutton.png" id="10_krih0"]
+[ext_resource type="Texture2D" uid="uid://bqomq72kyp1me" path="res://assets/ui/nextbutton_pressed.png" id="11_2cj26"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mho1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_182x5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stlyd"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="PreAssessment" type="Control" unique_id=930089186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ik3la")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1138551047]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 726.0
+texture = ExtResource("1_o3k8x")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="." unique_id=1208422626]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.033
+anchor_right = 0.5
+anchor_bottom = 0.033
+offset_left = -245.5
+offset_right = 245.5
+offset_bottom = 97.24
+grow_horizontal = 2
+texture = ExtResource("2_ik3la")
+expand_mode = 1
+
+[node name="FinishButton" type="TextureButton" parent="." unique_id=2050216756]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.92
+anchor_right = 0.5
+anchor_bottom = 0.92
+offset_left = -82.5
+offset_top = -64.28003
+offset_right = 116.5
+offset_bottom = 7.5999756
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_yejmf")
+texture_pressed = ExtResource("4_j6v2k")
+texture_hover = ExtResource("5_kp5pm")
+texture_focused = ExtResource("5_kp5pm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QuizPanel" type="Panel" parent="." unique_id=512644147]
+custom_minimum_size = Vector2(1083, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -225.0
+offset_right = 555.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mho1w")
+
+[node name="ProgressPanel" type="Panel" parent="QuizPanel" unique_id=1287873630]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 256.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_182x5")
+
+[node name="ProgressLabel" type="Label" parent="QuizPanel/ProgressPanel" unique_id=2079880188]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482
+anchor_top = 0.5
+anchor_right = 0.562
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -15.5
+offset_right = 310.81403
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 35
+text = "Python Stage 1"
+vertical_alignment = 1
+
+[node name="LanguageIcon" type="TextureRect" parent="QuizPanel/ProgressPanel" unique_id=2007424633]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 41.0
+texture = ExtResource("8_g12d6")
+expand_mode = 1
+
+[node name="QuestionPanel" type="TextureRect" parent="QuizPanel" unique_id=1774833088]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.317
+anchor_right = 0.504
+anchor_bottom = 0.321
+offset_left = -544.83203
+offset_top = -85.869995
+offset_right = 542.16797
+offset_bottom = 119.97
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_vy0iw")
+expand_mode = 1
+
+[node name="QuestionText" type="Label" parent="QuizPanel/QuestionPanel" unique_id=758303786]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 40
+text = "1. What type of error is presented?
+	string name = \"Kleo\"
+		print(int(name)"
+
+[node name="A" type="Button" parent="QuizPanel" unique_id=1778793437]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_top = 0.634
+anchor_right = 0.451
+anchor_bottom = 0.679
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 54.566986
+offset_bottom = 60.03
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_stlyd")
+text = "  A. "
+alignment = 0
+
+[node name="B" type="Button" parent="QuizPanel" unique_id=1400598103]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.634
+anchor_right = 0.956
+anchor_bottom = 0.688
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 29.651978
+offset_bottom = 54.359985
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 50
+text = "  C."
+alignment = 0
+
+[node name="C" type="Button" parent="QuizPanel" unique_id=336090550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.857
+anchor_right = 0.469
+anchor_bottom = 0.889
+offset_left = -18.904999
+offset_top = -8.51001
+offset_right = 33.734985
+offset_bottom = 59.73001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 50
+text = "  B. "
+alignment = 0
+
+[node name="D" type="Button" parent="QuizPanel" unique_id=1987697705]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.844
+anchor_right = 0.951
+anchor_bottom = 0.893
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 35.359985
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 50
+text = "  D."
+alignment = 0
+
+[node name="NextButton" type="TextureButton" parent="." unique_id=284314234]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.897
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -79.0
+offset_top = -46.840027
+offset_right = 115.0
+offset_bottom = 24.159973
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("10_krih0")
+texture_pressed = ExtResource("11_2cj26")
+texture_hover = ExtResource("11_2cj26")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
