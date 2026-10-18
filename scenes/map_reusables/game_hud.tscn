@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://tasl7etu31gv"]
+
+[ext_resource type="Script" uid="uid://l6333xii41yy" path="res://scripts/map_reusables/game_hud.gd" id="1_352n8"]
+[ext_resource type="Texture2D" uid="uid://d36p7cyc0evg5" path="res://assets/ui/arrow_up.png" id="1_cvspu"]
+[ext_resource type="Texture2D" uid="uid://dfl3b5tem3hn" path="res://assets/ui/arrow_up_pressed.png" id="2_352n8"]
+[ext_resource type="Texture2D" uid="uid://bla3fxfridmwf" path="res://assets/ui/arrow_left.png" id="3_ugd26"]
+[ext_resource type="Texture2D" uid="uid://bq4wp5yxqggui" path="res://assets/ui/arrow_left_pressed.png" id="4_fxg6v"]
+[ext_resource type="Texture2D" uid="uid://b634i3cwgxcr5" path="res://assets/ui/arrow_right.png" id="5_patud"]
+[ext_resource type="Texture2D" uid="uid://dugmccldmi62h" path="res://assets/ui/arrow_right_pressed.png" id="6_do6ic"]
+[ext_resource type="Texture2D" uid="uid://bx6x6a0p823a6" path="res://assets/ui/arrow_down.png" id="7_uufn5"]
+[ext_resource type="Texture2D" uid="uid://tr1jmavx2sqf" path="res://assets/ui/arrow_down_pressed.png" id="8_1rnck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_352n8"]
+radius = 482.61
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sjt2"]
+radius = 514.12
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aeg7o"]
+radius = 502.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1l3a"]
+radius = 478.67
+
+[node name="GameHud" type="CanvasLayer" unique_id=1347237238]
+layer = 5
+script = ExtResource("1_352n8")
+
+[node name="UpButton" type="TouchScreenButton" parent="." unique_id=1008837755]
+position = Vector2(145, 392.99994)
+scale = Vector2(0.11, 0.11)
+texture_normal = ExtResource("1_cvspu")
+texture_pressed = ExtResource("2_352n8")
+shape = SubResource("CircleShape2D_352n8")
+shape_visible = false
+action = "up"
+
+[node name="LeftButton" type="TouchScreenButton" parent="." unique_id=1670063328]
+position = Vector2(51.999996, 478.00006)
+scale = Vector2(0.11, 0.11)
+texture_normal = ExtResource("3_ugd26")
+texture_pressed = ExtResource("4_fxg6v")
+shape = SubResource("CircleShape2D_8sjt2")
+shape_visible = false
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="." unique_id=1281947032]
+position = Vector2(229.00002, 486.99997)
+scale = Vector2(0.11, 0.11)
+texture_normal = ExtResource("5_patud")
+texture_pressed = ExtResource("6_do6ic")
+shape = SubResource("CircleShape2D_aeg7o")
+shape_visible = false
+action = "right"
+
+[node name="DownButton" type="TouchScreenButton" parent="." unique_id=594296082]
+position = Vector2(139.00002, 558.00006)
+scale = Vector2(0.11, 0.11)
+texture_normal = ExtResource("7_uufn5")
+texture_pressed = ExtResource("8_1rnck")
+shape = SubResource("CircleShape2D_y1l3a")
+shape_visible = false
+action = "down"

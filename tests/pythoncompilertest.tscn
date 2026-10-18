@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_6wm5v"]
 [ext_resource type="Script" uid="uid://ccmb4wmaehyrn" path="res://tests/python_compiler_test.gd" id="1_crfle"]
 
-[node name="PythonCompilerTest" type="Control" unique_id=28563228]
+[node name="PythonCompilerTest (WINDOWS))" type="Control" unique_id=28563228]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_crfle")

@@ -8,7 +8,6 @@ var dialogue_index = 0
 var talking = false
 
 # NPC GAME STATE
-
 var npc_state = ""
 
 @export var npc_node: Node2D
@@ -51,9 +50,9 @@ func update_npc_state() -> void:
 	# 2. Knowledge Scan is complete, but video is not
 	elif not Gameprogress.completed_videos.get(key, false):
 		npc_state = "pre_assessment_complete"
-	# 3. Video is complete, but Journal + Compiler have not been received
-	elif not Gameprogress.received_journal_compiler.get(key, false) and not (Gameprogress.has_journal and Gameprogress.has_compiler):
-		npc_state = "journal_access"
+	# 3. Video is complete, but the bag has not been picked up
+	elif not Gameprogress.has_bag:
+		npc_state = "bag_access"
 	# 4. Journal + Compiler received, but stage is not complete
 	elif not Gameprogress.completed_stages.get(key, false):
 		npc_state = "journal_complete"
@@ -85,7 +84,7 @@ func run_tag(tag: String) -> void:
 func _ready() -> void:
 	speech_bubble.hide()
 	tap_button.hide()
-	Gameprogress.tools_changed.connect(_on_tools_changed)
+	Gameprogress.bag_changed.connect(_on_bag_changed)
 	update_npc_state()
 
 # START NPC DIALOGUE
@@ -142,18 +141,18 @@ func set_dialogue() -> void:
 				"When you're finished, come back to me. I've got something for you that'll help you on your journey.[hide_arrow]"
 			]
 		# AFTER VIDEO
-		"journal_access":
+		"bag_access":
 			dialogue = [
 				"Nice work!",
-				"This is your journal and compiler on my desk ⮟",
-				"Tap them to pick them up. You can open them anytime from the top right.",
-				"Your compiler can help you test your code during battles.[hide_arrow]"
+				"This is your bag on my desk ⮟",
+				"Tap it to pick it up. It holds your profile, journal, compiler, map and compass.",
+				"You can open it anytime from the top right.[hide_arrow]"
 			]
-		# AFTER JOURNAL + COMPILER
+		# AFTER BAG
 		"journal_complete":
 			dialogue = [
 				"Ready for your first mission?",
-				"Something's wrong at the school. Programming bugs have been detected!",
+				"Something's wrong at the SCHOOL. Programming bugs have been detected!",
 				"Head there, investigate, and defeat the bugs."
 			]
 		# AFTER STAGE
@@ -187,16 +186,17 @@ func _on_tap_button_pressed() -> void:
 		show_line(dialogue[dialogue_index])
 	else:
 		end_dialogue()
-var tools_dialogue_played := false
 
-func _on_tools_changed() -> void:
-	if tools_dialogue_played:
+
+var bag_dialogue_played := false
+
+func _on_bag_changed() -> void:
+	if bag_dialogue_played or not Gameprogress.has_bag:
 		return
-	if Gameprogress.has_journal and Gameprogress.has_compiler:
-		tools_dialogue_played = true
-		talking = false       
-		complete_journal()
-		start_dialogue.call_deferred()
+	bag_dialogue_played = true
+	talking = false
+	update_npc_state()
+	start_dialogue.call_deferred()
 # END DIALOGUE
 func end_dialogue() -> void:
 	talking = false
@@ -218,11 +218,13 @@ func handle_dialogue_finished() -> void:
 			Gameprogress.lock_door("scanner_room")
 			print("Knowledge Scan Done")
 			Gameprogress.unlock_door("video_room")
-		"journal_access":
-			print("Journal and Compiler Unlocked")
+		"bag_access":
+			print("Bag Unlocked")
 			Gameprogress.lock_door("video_room")
 		"journal_complete":
 			print("Start Stage Mission")
+			Gameprogress.mission_started = true
+			Gameprogress.mission_started_changed.emit()
 		"school_complete":
 			print("Start Knowledge Check")
 		"post_assessment_complete":

@@ -7,6 +7,7 @@ signal finished
 @onready var close_button: Button = $CloseButton
 
 func _ready() -> void:
+	Gameprogress.hud_allowed = false
 	load_current_video()
 
 

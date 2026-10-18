@@ -4,6 +4,7 @@ extends Node2D
 @onready var video_spawn_point = $VideoWatchingSpawn
 
 func _ready() -> void:
+	Gameprogress.hud_allowed = true
 	if SpawnManager.spawn_name == "girl":
 		girl_player.global_position = video_spawn_point.global_position
 		SpawnManager.spawn_name = ""

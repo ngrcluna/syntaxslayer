@@ -1,8 +1,9 @@
 extends Control
 
 @onready var loadingbar = $ProgressBar
+
 func _ready() -> void:
-	pass
+	Gameprogress.hud_allowed = false
 
 func _process(delta: float) -> void:
 	if loadingbar.value < 100:

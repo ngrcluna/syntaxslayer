@@ -1,33 +1,37 @@
 [gd_scene format=3 uid="uid://d3ahh2ldlvvqi"]
 
-[ext_resource type="Script" uid="uid://cygugjdsvhqql" path="res://scenes/map_reusables/hud.gd" id="1_h422u"]
-[ext_resource type="Texture2D" uid="uid://b4fhftqglw2yd" path="res://assets/items/journal_placeholder.png" id="2_af3y3"]
-[ext_resource type="Texture2D" uid="uid://cj72dgq40v6o3" path="res://assets/items/compiler_placeholder.png" id="3_khmkn"]
+[ext_resource type="Script" uid="uid://cygugjdsvhqql" path="res://scenes/map_reusables/hud.gd" id="1_08xuk"]
+[ext_resource type="Texture2D" uid="uid://dm5kdgf705oqi" path="res://assets/items/bagbtn.png" id="2_yrpg7"]
+[ext_resource type="PackedScene" uid="uid://3gooe2moiw7h" path="res://scenes/bag/BagMenu.tscn" id="3_af3y3"]
+[ext_resource type="Texture2D" uid="uid://dmlx0hql18fb1" path="res://assets/ui/settingsbtn_hud.png" id="3_ote62"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1700140300]
-layer = 100
-script = ExtResource("1_h422u")
+[node name="BagHud" type="CanvasLayer" unique_id=1340186766]
+layer = 10
+script = ExtResource("1_08xuk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=27146366]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=648708596]
 anchors_preset = -1
-anchor_left = 0.9
+anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -537.0
-offset_top = 2.0
-offset_bottom = 102.0
+offset_left = -345.0
+offset_top = 17.0
+offset_right = -11.0
+offset_bottom = 128.0
 grow_horizontal = 0
 alignment = 2
 
-[node name="JournalButton" type="TextureButton" parent="HBoxContainer" unique_id=1302609759]
-custom_minimum_size = Vector2(100, 60)
+[node name="BagButton" type="TextureButton" parent="HBoxContainer" unique_id=759203379]
+custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
-texture_normal = ExtResource("2_af3y3")
+texture_normal = ExtResource("2_yrpg7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="CompilerButton" type="TextureButton" parent="HBoxContainer" unique_id=1778657671]
-custom_minimum_size = Vector2(120, 60)
+[node name="SettingsButton" type="TextureButton" parent="HBoxContainer" unique_id=962719547]
+custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
-texture_normal = ExtResource("3_khmkn")
+texture_normal = ExtResource("3_ote62")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="BagMenu" parent="." unique_id=1629351508 instance=ExtResource("3_af3y3")]

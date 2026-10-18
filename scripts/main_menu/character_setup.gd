@@ -1,6 +1,6 @@
 extends Control
 
-@onready var character_image = $Character
+@onready var character_image = %Character
 
 var characters = [
 	{
@@ -19,6 +19,7 @@ var selected_character := "girl"
 
 func _ready() -> void:
 	update_character()
+	Gameprogress.hud_allowed = false
 
 
 func update_character() -> void:
@@ -44,7 +45,7 @@ func _on_save_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/language_selection/language_selection_screen.tscn")
 
 func _on_clear_button_pressed() -> void:
-	$"Name Edit/PlayerName".clear()
+	%PlayerName.clear()
 
 
 func _on_back_button_pressed() -> void:

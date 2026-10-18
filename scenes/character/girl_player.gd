@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 230
 @onready var animated_sprite = $girl_player_animation
 @export var animation_speed = 0.1
+@onready var game_hud = $GameHud 
 
 var can_move := true
 var _default_mask: int
@@ -76,10 +77,12 @@ func stop_moving() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
 	animated_sprite.play("girl_idle")
+	game_hud.visible = false
 
 func resume_moving() -> void:
 	can_move = true
 	velocity = Vector2.ZERO
+	game_hud.visible = true
 
 
 # PLAYER MOVEMENT

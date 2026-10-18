@@ -16,10 +16,16 @@ autoplay = true
 expand = true
 
 [node name="PlayPauseButton" type="Button" parent="." unique_id=569334980]
-offset_left = 420.0
-offset_top = 603.0
-offset_right = 616.0
-offset_bottom = 669.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.907
+anchor_right = 0.5
+anchor_bottom = 0.907
+offset_left = -98.0
+offset_top = -66.0
+offset_right = 98.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(0.5823297, 1, 0.5717406, 1)
 theme_override_fonts/font = ExtResource("2_vagqn")
@@ -27,10 +33,16 @@ theme_override_font_sizes/font_size = 31
 text = "Play"
 
 [node name="CloseButton" type="Button" parent="." unique_id=3789283]
-offset_left = 650.0
-offset_top = 604.0
-offset_right = 790.0
-offset_bottom = 668.0
+anchors_preset = -1
+anchor_left = 0.673
+anchor_top = 0.898
+anchor_right = 0.673
+anchor_bottom = 0.907
+offset_left = -98.0
+offset_top = -64.0
+offset_right = 97.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("2_vagqn")
 theme_override_font_sizes/font_size = 42

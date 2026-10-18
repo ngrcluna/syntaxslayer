@@ -14,9 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c83rvdf0xhvu5" path="res://assets/items/python_knowledgescanner.png" id="12_tlxbw"]
 [ext_resource type="Script" uid="uid://bk4b1wljr7mmw" path="res://scenes/main/python_map/scanner_detector.gd" id="13_u5qb7"]
 [ext_resource type="Script" uid="uid://cad252dyfc0in" path="res://scenes/main/python_map/watch_video.gd" id="14_10mim"]
+[ext_resource type="Texture2D" uid="uid://bn1idmrfhfiug" path="res://assets/items/bag.png" id="15_0nrm0"]
 [ext_resource type="PackedScene" uid="uid://do3ybla3ixhse" path="res://scenes/map_reusables/desk_item.tscn" id="18_g8ecr"]
-[ext_resource type="Texture2D" uid="uid://b4fhftqglw2yd" path="res://assets/items/journal_placeholder.png" id="19_sv5yp"]
-[ext_resource type="Texture2D" uid="uid://gp865s7wdmrg" path="res://assets/items/compiler_placeholder.png" id="20_s5np7"]
 [ext_resource type="PackedScene" uid="uid://b20tu6ess4dkb" path="res://scenes/map_reusables/scanner_door.tscn" id="20_wybbt"]
 [ext_resource type="Texture2D" uid="uid://d2o884rsc40k6" path="res://assets/tiles/floor.png" id="21_7wht2"]
 [ext_resource type="PackedScene" uid="uid://cgne4chls2fsf" path="res://scenes/map_reusables/videodoor.tscn" id="21_wybbt"]
@@ -22047,18 +22046,11 @@ stretch_mode = 0
 [node name="VideoWatchingSpawn" type="Marker2D" parent="." unique_id=1077602979]
 position = Vector2(763, 73)
 
-[node name="JournalItem" parent="." unique_id=2074306114 instance=ExtResource("18_g8ecr")]
+[node name="Bag" parent="." unique_id=2074306114 instance=ExtResource("18_g8ecr")]
 z_index = 2
-position = Vector2(613, 61)
-scale = Vector2(0.1, 0.1)
-item_texture = ExtResource("19_sv5yp")
-
-[node name="CompilerItem" parent="." unique_id=2030610336 instance=ExtResource("18_g8ecr")]
-z_index = 2
-position = Vector2(597, 61)
-scale = Vector2(0.1, 0.1)
-item_id = "compiler"
-item_texture = ExtResource("20_s5np7")
+position = Vector2(608, 57)
+scale = Vector2(0.15, 0.15)
+item_texture = ExtResource("15_0nrm0")
 
 [node name="HQExit" parent="." unique_id=425686685 instance=ExtResource("6_bavq5")]
 z_index = 2
@@ -22131,7 +22123,6 @@ scale = Vector2(0.8, 0.8)
 [connection signal="body_exited" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_body_exited"]
 [connection signal="input_event" from="KnowledgeScannerBed/ScannerDetector" to="KnowledgeScannerBed/ScannerDetector" method="_on_input_event"]
 [connection signal="pressed" from="WatchVideo/Computer" to="WatchVideo" method="_on_computer_pressed"]
-[connection signal="input_event" from="JournalItem" to="JournalItem" method="_on_input_event"]
-[connection signal="input_event" from="CompilerItem" to="CompilerItem" method="_on_input_event"]
+[connection signal="input_event" from="Bag" to="Bag" method="_on_input_event"]
 
 [editable path="HQExit"]

@@ -26,10 +26,12 @@ grow_vertical = 2
 script = ExtResource("1_8g8ho")
 
 [node name="Cloud BG" type="TextureRect" parent="." unique_id=1642635187]
-layout_mode = 0
-offset_left = -60.0
-offset_right = 1305.0
-offset_bottom = 728.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_fmtw5")
 expand_mode = 1
 
@@ -129,11 +131,18 @@ button_pressed = true
 text = "JAVA"
 
 [node name="PythonButton" type="TextureButton" parent="." unique_id=1655222798]
-layout_mode = 0
-offset_left = 589.0
-offset_top = 132.0
-offset_right = 718.0
-offset_bottom = 407.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -230.0
+offset_right = 78.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("5_cvgqg")
 texture_pressed = ExtResource("6_o7nph")
 texture_hover = ExtResource("6_o7nph")

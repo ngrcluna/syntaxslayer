@@ -1,27 +1,33 @@
 extends CanvasLayer
 
-@onready var container: HBoxContainer = $HBoxContainer
-@onready var journal_button: TextureButton = $HBoxContainer/JournalButton
-@onready var compiler_button: TextureButton = $HBoxContainer/CompilerButton
+@onready var hud_row: HBoxContainer = $HBoxContainer
+@onready var bag_button: TextureButton = $HBoxContainer/BagButton
+@onready var bag_menu = $BagMenu
 
 
 func _ready() -> void:
-	container.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	Gameprogress.hud_allowed_changed.connect(_on_hud_allowed_changed)
+	Gameprogress.bag_changed.connect(refresh)
+	bag_button.pressed.connect(_on_bag_pressed)
+	visible = Gameprogress.hud_allowed
+	refresh()
 
-	Gameprogress.tools_changed.connect(refresh)
-	journal_button.pressed.connect(_on_journal_pressed)
-	compiler_button.pressed.connect(_on_compiler_pressed)
+
+func _on_bag_pressed() -> void:
+	if bag_menu.visible:
+		bag_menu.close()
+	else:
+		bag_menu.open()
+
+
+func _on_hud_allowed_changed(allowed: bool) -> void:
+	visible = allowed
 	refresh()
 
 
 func refresh() -> void:
-	journal_button.visible = Gameprogress.has_journal
-	compiler_button.visible = Gameprogress.has_compiler
-
-
-func _on_journal_pressed() -> void:
-	print("Open journal")
-
-
-func _on_compiler_pressed() -> void:
-	print("Open compiler")
+	hud_row.visible = Gameprogress.hud_allowed
+	bag_button.visible = Gameprogress.has_bag
+	if not Gameprogress.hud_allowed and bag_menu.visible:
+		bag_menu.close()

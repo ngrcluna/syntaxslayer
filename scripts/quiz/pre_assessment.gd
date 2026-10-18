@@ -16,6 +16,7 @@ var answers: Array = []
 var missed_topics := {}
 
 func _ready() -> void:
+	Gameprogress.hud_allowed = false
 	finish_button.hide()
 	_set_next_enabled(false)
 	_style_choice_buttons()

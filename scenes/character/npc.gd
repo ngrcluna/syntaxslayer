@@ -19,7 +19,7 @@ func _ready() -> void:
 	dialogue.update_npc_state()
 	if dialogue.npc_state == "first_visit" and not Gameprogress.met_npc_intro:
 		show_guide_arrow()
-	elif dialogue.npc_state in ["pre_assessment_complete", "journal_access"]:
+	elif dialogue.npc_state in ["pre_assessment_complete", "bag_access"]:
 		show_guide_arrow()
 
 func _on_dialogue_started() -> void:

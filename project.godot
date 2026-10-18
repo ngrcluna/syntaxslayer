@@ -13,6 +13,9 @@ config_version=5
 config/name="Syntax Slayer"
 run/main_scene="uid://datpl4xwi7mn5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=2
+boot_splash/image="uid://c6nvn425u52ye"
 
 [autoload]
 
@@ -32,6 +35,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotAndroidPluginTemplate/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
 
 [global_group]
 
@@ -64,6 +71,10 @@ right={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_physics/layer_1="Player"
@@ -79,3 +90,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

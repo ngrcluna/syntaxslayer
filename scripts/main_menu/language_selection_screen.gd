@@ -2,8 +2,9 @@ extends Control
 
 var selected_language: String = ""
 @onready var language_texture: TextureRect = $Compass
+
 func _ready() -> void:
-	pass
+	Gameprogress.hud_allowed = false
 
 
 func _on_python_button_pressed() -> void:

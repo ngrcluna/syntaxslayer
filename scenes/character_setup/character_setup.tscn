@@ -22,10 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://dd5xqqn55lg3f" path="res://assets/ui/clearbtn.png" id="14_6lbhi"]
 [ext_resource type="Texture2D" uid="uid://d3w0swmi3a8wb" path="res://assets/ui/clearbtn_pressed.png" id="15_fc7dl"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_275mx"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e2onr"]
 load_path = "res://.godot/imported/backbtn_hover.png-55d205c4c242cd9759707fab2a72c626.ctex"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_275mx"]
 
 [node name="Character Setup" type="Control" unique_id=1608436356]
 layout_mode = 3
@@ -41,47 +41,72 @@ grow_vertical = 2
 script = ExtResource("1_ko4lt")
 
 [node name="CharacterSetup BG" type="TextureRect" parent="." unique_id=634788824]
-layout_mode = 0
-offset_left = -7.0
-offset_top = -9.0
-offset_right = 1282.0
-offset_bottom = 725.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_qqsgj")
 expand_mode = 1
 
-[node name="Set up Text" type="TextureRect" parent="." unique_id=1502247107]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 53.0
-offset_right = 570.0
-offset_bottom = 144.0
-texture = ExtResource("3_hbucj")
-expand_mode = 1
+[node name="GameArea" type="Control" parent="." unique_id=894918918]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Platform" type="TextureRect" parent="." unique_id=2045199983]
+[node name="Platform" type="TextureRect" parent="GameArea" unique_id=2045199983]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.02
-anchor_right = 0.01
-anchor_bottom = 0.5
-offset_left = 175.0
-offset_top = 494.0
-offset_right = 425.0
-offset_bottom = 199.0
+anchor_left = 0.22900002
+anchor_top = 0.788
+anchor_right = 0.22900002
+anchor_bottom = 0.788
+offset_left = -125.32002
+offset_top = -32.359985
+offset_right = 124.67996
+offset_bottom = 17.640015
 texture = ExtResource("2_r86bo")
 expand_mode = 1
 
-[node name="Left Arrow" type="TextureButton" parent="." unique_id=206394943]
+[node name="Character" type="TextureRect" parent="GameArea" unique_id=1975708034]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.08
-anchor_top = 0.5
-anchor_right = 0.08
-anchor_bottom = 0.5
-offset_top = -44.0
-offset_right = 70.0
-offset_bottom = 44.0
+anchor_left = 0.23300001
+anchor_top = 0.566
+anchor_right = 0.23300001
+anchor_bottom = 0.566
+offset_left = -126.24002
+offset_top = -204.0
+offset_right = 126.75998
+offset_bottom = 143.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_0uer6")
+expand_mode = 1
+
+[node name="Left Arrow" type="TextureButton" parent="GameArea" unique_id=206394943]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09200001
+anchor_top = 0.565
+anchor_right = 0.09200001
+anchor_bottom = 0.565
+offset_left = -35.360016
+offset_top = -43.840027
+offset_right = 34.639984
+offset_bottom = 44.159973
 grow_vertical = 2
 texture_normal = ExtResource("3_0svtq")
 texture_pressed = ExtResource("4_0uer6")
@@ -89,16 +114,17 @@ texture_hover = ExtResource("4_0uer6")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Right Arrow" type="TextureButton" parent="." unique_id=703730020]
+[node name="Right Arrow" type="TextureButton" parent="GameArea" unique_id=703730020]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36
-anchor_top = 0.5
-anchor_right = 0.4
-anchor_bottom = 0.5
-offset_top = -44.0
-offset_right = 18.800049
-offset_bottom = 44.0
+anchor_left = 0.372
+anchor_top = 0.565
+anchor_right = 0.372
+anchor_bottom = 0.565
+offset_left = -35.3602
+offset_top = -43.840027
+offset_right = 34.839508
+offset_bottom = 44.159973
 grow_vertical = 2
 texture_normal = ExtResource("4_h3ffu")
 texture_pressed = ExtResource("6_c67pi")
@@ -106,104 +132,79 @@ texture_hover = ExtResource("6_c67pi")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Character" type="TextureRect" parent="." unique_id=1975708034]
+[node name="Text Background" type="TextureRect" parent="GameArea" unique_id=1153442017]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.15
-anchor_top = 0.5
-anchor_right = 0.15
-anchor_bottom = 0.5
-offset_top = -184.0
-offset_right = 253.0
-offset_bottom = 163.5
-grow_vertical = 2
-texture = ExtResource("5_0uer6")
-expand_mode = 1
-
-[node name="Back Button" type="TextureButton" parent="." unique_id=527298018]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.9
-anchor_right = 0.1
-anchor_bottom = 1.0
-offset_top = -50.0
-offset_right = 71.0
-offset_bottom = -57.0
-grow_vertical = 0
-texture_normal = ExtResource("7_h3ffu")
-texture_pressed = ExtResource("10_c67pi")
-texture_hover = SubResource("CompressedTexture2D_e2onr")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Text Background" type="TextureRect" parent="." unique_id=1153442017]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.924
-anchor_top = 0.453
-anchor_right = 0.939
-anchor_bottom = 0.672
-offset_left = -576.72
-offset_top = -217.16
-offset_right = 0.2800293
-offset_bottom = 36.160004
+anchor_left = 0.686
+anchor_top = 0.536
+anchor_right = 0.713
+anchor_bottom = 0.563
+offset_left = -298.64008
+offset_top = -219.92001
+offset_right = 297.55994
+offset_bottom = 188.23996
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("8_6eum7")
 expand_mode = 1
 
-[node name="Information Text" type="TextureRect" parent="." unique_id=996992100]
+[node name="Information Text" type="TextureRect" parent="GameArea" unique_id=996992100]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.816
-anchor_top = 0.169
-anchor_right = 0.831
-anchor_bottom = 0.17
-offset_left = -277.47998
-offset_top = 33.32
-offset_right = -2.4799805
-offset_bottom = 98.32
+anchor_left = 0.71400005
+anchor_top = 0.336
+anchor_right = 0.718
+anchor_bottom = 0.336
+offset_left = -146.92004
+offset_top = -32.92
+offset_right = 147.2799
+offset_bottom = 32.800003
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_eqlvj")
 expand_mode = 1
 
-[node name="Enter Name" type="Label" parent="." unique_id=800197439]
+[node name="Enter Name" type="Label" parent="GameArea" unique_id=800197439]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.607
-anchor_top = 0.265
-anchor_right = 0.685
-anchor_bottom = 0.276
-offset_left = -116.95996
-offset_top = 55.200012
-offset_right = 133.04004
-offset_bottom = 80.20001
+anchor_left = 0.584
+anchor_top = 0.434
+anchor_right = 0.584
+anchor_bottom = 0.434
+offset_left = -121.0
+offset_top = -16.459991
+offset_right = 121.0
+offset_bottom = 16.459991
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.5372549, 0.35686275, 0.20392157, 1)
 theme_override_fonts/font = ExtResource("8_fc7dl")
 theme_override_font_sizes/font_size = 22
 text = "ENTER NAME:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Name Edit" type="TextureRect" parent="." unique_id=1998290660]
+[node name="Name Edit" type="TextureRect" parent="GameArea" unique_id=1998290660]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.908
-anchor_top = 0.331
-anchor_right = 0.954
-anchor_bottom = 0.346
-offset_left = -508.24
-offset_top = 57.679993
-offset_right = -62.119995
-offset_bottom = 112.67999
-grow_horizontal = 0
+anchor_left = 0.704
+anchor_top = 0.531
+anchor_right = 0.704
+anchor_bottom = 0.531
+offset_left = -252.5
+offset_top = -32.899994
+offset_right = 252.5
+offset_bottom = 32.899994
+grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_ymiw7")
 expand_mode = 1
 
-[node name="PlayerName" type="LineEdit" parent="Name Edit" unique_id=770360160]
+[node name="PlayerName" type="LineEdit" parent="GameArea/Name Edit" unique_id=770360160]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 30.0
 offset_top = 10.0
@@ -216,18 +217,38 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_275mx")
 placeholder_text = "e.g. juandcruz"
 max_length = 15
 
-[node name="Clear Button" type="TextureButton" parent="." unique_id=274158817]
+[node name="Save Button" type="TextureButton" parent="GameArea" unique_id=892297000]
+custom_minimum_size = Vector2(162, 57)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.624
-anchor_top = 0.547
-anchor_right = 0.624
-anchor_bottom = 0.555
-offset_left = -80.72003
-offset_top = 3.1600037
-offset_right = 86.27997
-offset_bottom = 55.399994
+anchor_left = 0.786
+anchor_top = 0.672
+anchor_right = 0.786
+anchor_bottom = 0.672
+offset_left = -81.36005
+offset_top = -28.200104
+offset_right = 80.63995
+offset_bottom = 43.160004
 grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("13_0gcbn")
+texture_pressed = ExtResource("6_6lbhi")
+texture_hover = ExtResource("9_ak2ck")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Clear Button" type="TextureButton" parent="GameArea" unique_id=274158817]
+custom_minimum_size = Vector2(167, 58)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.611
+anchor_top = 0.725
+anchor_right = 0.611
+anchor_bottom = 0.725
+offset_left = -83.5
+offset_top = -65.0
+offset_right = 83.5
+grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("14_6lbhi")
 texture_pressed = ExtResource("15_fc7dl")
@@ -235,27 +256,54 @@ texture_hover = ExtResource("6_hbucj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Save Button" type="TextureButton" parent="." unique_id=892297000]
+[node name="SafeMargin" type="MarginContainer" parent="." unique_id=88259174]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.871
-anchor_top = 0.554
-anchor_right = 0.871
-anchor_bottom = 0.554
-offset_left = -165.88
-offset_top = -0.8800049
-offset_right = -3.880005
-offset_bottom = 56.120056
-grow_horizontal = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("13_0gcbn")
-texture_pressed = ExtResource("6_6lbhi")
-texture_hover = ExtResource("9_ak2ck")
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Layout" type="Control" parent="SafeMargin" unique_id=94194637]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Back Button" type="TextureButton" parent="SafeMargin/Layout" unique_id=527298018]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+offset_right = 150.0
+offset_bottom = -2.0
+grow_vertical = 0
+texture_normal = ExtResource("7_h3ffu")
+texture_pressed = ExtResource("10_c67pi")
+texture_hover = SubResource("CompressedTexture2D_e2onr")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="Left Arrow" to="." method="_on_left_arrow_pressed"]
-[connection signal="pressed" from="Right Arrow" to="." method="_on_right_arrow_pressed"]
-[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Clear Button" to="." method="_on_clear_button_pressed"]
-[connection signal="pressed" from="Save Button" to="." method="_on_save_button_pressed"]
+[node name="Set up Text" type="TextureRect" parent="SafeMargin/Layout" unique_id=1502247107]
+custom_minimum_size = Vector2(580, 110)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_right = 290.0
+offset_bottom = 110.0
+grow_horizontal = 2
+texture = ExtResource("3_hbucj")
+expand_mode = 1
+
+[connection signal="pressed" from="GameArea/Left Arrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="GameArea/Right Arrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="pressed" from="GameArea/Save Button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="GameArea/Clear Button" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="SafeMargin/Layout/Back Button" to="." method="_on_back_button_pressed"]

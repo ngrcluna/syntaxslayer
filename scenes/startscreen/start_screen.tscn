@@ -17,19 +17,23 @@ grow_vertical = 2
 script = ExtResource("1_wgw37")
 
 [node name="Background with Logo" type="TextureRect" parent="." unique_id=225539473]
-layout_mode = 0
-offset_top = -3.0
-offset_right = 1285.0
-offset_bottom = 719.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_hu660")
 expand_mode = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=356192725]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 644.0
-offset_right = 1283.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 668.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_0vsgl")
