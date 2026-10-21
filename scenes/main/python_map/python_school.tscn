@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bd3qr8tho8xuo"]
+
+[ext_resource type="PackedScene" uid="uid://b7lrcleud4g5b" path="res://scenes/map_reusables/school.tscn" id="1_dy4nj"]
+[ext_resource type="PackedScene" uid="uid://dad246blofj6s" path="res://scenes/map_reusables/bug_zone.tscn" id="2_eoovx"]
+
+[node name="Python_School" type="Node2D" unique_id=1904663813]
+
+[node name="School" parent="." unique_id=1070137149 instance=ExtResource("1_dy4nj")]
+z_index = 1
+position = Vector2(0, -8)
+
+[node name="Exterior" parent="School" index="3" unique_id=555126993]
+offset_left = -1311.0
+offset_top = -682.0
+offset_right = 2108.0
+offset_bottom = 1061.0
+
+[node name="Girl Player" parent="School" index="4" unique_id=2041596861]
+position = Vector2(245, 254.99997)
+
+[node name="BugZone1" parent="." unique_id=1659406224 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(108, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone2" parent="." unique_id=1766372501 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(249, -104)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone3" parent="." unique_id=1311917477 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(375, -40)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone4" parent="." unique_id=1235610457 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(559, -92)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone5" parent="." unique_id=1320458796 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(358, 176)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone6" parent="." unique_id=1847741262 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(486, 160)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone7" parent="." unique_id=1938826968 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(91, 153)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone8" parent="." unique_id=1763849019 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(-58, 184)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone9" parent="." unique_id=1387886819 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(-105, -93)
+scale = Vector2(0.5, 0.5)
+
+[node name="BugZone10" parent="." unique_id=1244087844 groups=["player"] instance=ExtResource("2_eoovx")]
+z_index = 10
+position = Vector2(12, -49)
+scale = Vector2(0.5, 0.5)
+
+[editable path="School"]

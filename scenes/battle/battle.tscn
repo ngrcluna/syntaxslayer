@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://b5bndfixnyju4"]
+
+[ext_resource type="Texture2D" uid="uid://dfb0r8212reh5" path="res://assets/background/black.png" id="1_7gynk"]
+[ext_resource type="Script" uid="uid://6tm12l75t80d" path="res://scenes/battle/battle.gd" id="1_ffvsa"]
+[ext_resource type="Texture2D" uid="uid://8wak746k4reu" path="res://assets/battle/problem.png" id="3_py4tk"]
+[ext_resource type="Texture2D" uid="uid://dxvqjkud77gip" path="res://assets/battle/answer_section.png" id="4_agsc7"]
+[ext_resource type="FontFile" uid="uid://c8uey70kim85n" path="res://assets/fonts/Jersey10-Regular.ttf" id="4_mxe8n"]
+[ext_resource type="Texture2D" uid="uid://bmv1qtefhrqsr" path="res://assets/battle/full_heart.png" id="4_oiw7q"]
+[ext_resource type="Texture2D" uid="uid://dxivd60eks8p4" path="res://assets/characters/girlcharacter.png" id="5_fisqk"]
+[ext_resource type="Texture2D" uid="uid://cq662ikggew8v" path="res://assets/battle/cancelbtn.png" id="5_oiw7q"]
+[ext_resource type="Texture2D" uid="uid://gdqacm86ot0p" path="res://assets/battle/cancelbtn_pressed.png" id="6_fisqk"]
+[ext_resource type="Texture2D" uid="uid://w8i0op17gpni" path="res://assets/battle/ant.png" id="6_mxe8n"]
+[ext_resource type="Texture2D" uid="uid://bi260wcqf6em2" path="res://assets/battle/submitbtn.png" id="7_mxe8n"]
+[ext_resource type="Texture2D" uid="uid://32c25ylod6lq" path="res://assets/battle/submitbtn_pressed.png" id="8_icoan"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mho1w"]
+texture = ExtResource("3_py4tk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mho1w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icoan"]
+atlas = ExtResource("5_fisqk")
+region = Rect2(1364, 1364, 682, 682)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mho1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icoan")
+}],
+"loop": 1,
+"name": &"girl_player_battle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd6yx"]
+atlas = ExtResource("6_mxe8n")
+region = Rect2(0, 0, 1536, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_182x5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd6yx")
+}],
+"loop": 1,
+"name": &"bug_battle",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_182x5"]
+texture = ExtResource("4_agsc7")
+
+[node name="Battle" type="Control" unique_id=1569558548]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ffvsa")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1519371320]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7gynk")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1852482404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=25029940]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="QuestionContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1875921820]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mho1w")
+
+[node name="Separator" type="VBoxContainer" parent="MarginContainer/HBoxContainer/QuestionContainer" unique_id=195941489]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator" unique_id=47096617]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 60
+
+[node name="ProblemNumber" type="Label" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/MarginContainer2" unique_id=1587132083]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator" unique_id=1548837655]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_right = 35
+
+[node name="Question" type="Label" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/MarginContainer" unique_id=465501227]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mxe8n")
+theme_override_font_sizes/font_size = 30
+
+[node name="Fight" type="Panel" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator" unique_id=177058600]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mho1w")
+
+[node name="PlayerLives" type="HBoxContainer" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight" unique_id=1697744235]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.058
+anchor_right = 0.129
+anchor_bottom = 0.058
+offset_right = 127.442
+offset_bottom = 38.29599
+
+[node name="heart1" type="TextureRect" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight/PlayerLives" unique_id=906074516]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("4_oiw7q")
+expand_mode = 1
+
+[node name="heart2" type="TextureRect" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight/PlayerLives" unique_id=2099163525]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("4_oiw7q")
+expand_mode = 1
+
+[node name="heart3" type="TextureRect" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight/PlayerLives" unique_id=489541512]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("4_oiw7q")
+expand_mode = 1
+
+[node name="EnemyLife" type="HBoxContainer" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight" unique_id=1904808497]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.821
+anchor_top = 0.021
+anchor_right = 0.875
+anchor_bottom = 0.021
+offset_left = -5.34198
+offset_top = 8.951996
+offset_bottom = 45.951996
+grow_horizontal = 0
+alignment = 2
+
+[node name="enemylife" type="TextureRect" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight/EnemyLife" unique_id=2044065821]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("4_oiw7q")
+expand_mode = 1
+
+[node name="Player" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight" unique_id=2142105898]
+unique_name_in_owner = true
+position = Vector2(200.89282, 132.38686)
+scale = Vector2(0.21962704, 0.2122781)
+sprite_frames = SubResource("SpriteFrames_mho1w")
+animation = &"girl_player_battle"
+frame_progress = 0.68487555
+
+[node name="Enemy" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/QuestionContainer/Separator/Fight" unique_id=388899160]
+unique_name_in_owner = true
+position = Vector2(472, 141)
+scale = Vector2(0.1389974, 0.13183594)
+sprite_frames = SubResource("SpriteFrames_182x5")
+animation = &"bug_battle"
+
+[node name="AnswerContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=195631437]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/AnswerContainer" unique_id=1350781231]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_182x5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer" unique_id=2085720511]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer/MarginContainer" unique_id=1075120645]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1403999421]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_mxe8n")
+theme_override_font_sizes/font_size = 24
+wrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2065929683]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.3
+theme_override_constants/separation = 10
+
+[node name="CancelButton" type="TextureButton" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1851079590]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 50)
+layout_mode = 2
+texture_normal = ExtResource("5_oiw7q")
+texture_pressed = ExtResource("6_fisqk")
+texture_hover = ExtResource("6_fisqk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SubmitButton" type="TextureButton" parent="MarginContainer/HBoxContainer/AnswerContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1381034469]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+texture_normal = ExtResource("7_mxe8n")
+texture_pressed = ExtResource("8_icoan")
+texture_hover = ExtResource("8_icoan")
+ignore_texture_size = true
+stretch_mode = 0

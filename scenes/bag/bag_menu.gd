@@ -21,6 +21,8 @@ const COMPASS_SPOTS := {
 @onready var map_button: TextureButton = %MapButton
 @onready var compass_button: TextureButton = %CompassButton
 @onready var close_button: TextureButton = %CloseButton
+@onready var compiler_back_button: TextureButton = %CompilerBackButton
+@onready var hud_buttons: Control = get_parent().get_node_or_null("HBoxContainer")
 
 # Screen contents (unique names)
 @onready var profile_info: RichTextLabel = %ProfileInfo
@@ -45,10 +47,13 @@ func _ready() -> void:
 	map_button.pressed.connect(_show_screen.bind("MapScreen"))
 	compass_button.pressed.connect(_show_screen.bind("CompassScreen"))
 	close_button.pressed.connect(close)
+	compiler_back_button.pressed.connect(_show_hub)
 
-	# Every screen's BackButton returns to the hub
+	# Every screen's BackButton returns to the hub (searches nested children too)
 	for screen in screens.get_children():
-		screen.get_node("BackButton").pressed.connect(_show_hub)
+		var back := screen.find_child("BackButton", true, false)
+		if back:
+			back.pressed.connect(_show_hub)
 
 	# Compiler
 	for l in Gameprogress.LANGUAGES:
@@ -56,10 +61,7 @@ func _ready() -> void:
 	picker.item_selected.connect(_on_language_picked)
 	run_button.pressed.connect(_on_run_pressed)
 
-	# Compass spots
-	#for lang in COMPASS_SPOTS:
-	#	var spot: TextureButton = compass_image.get_node(COMPASS_SPOTS[lang])
-	#	spot.pressed.connect(_travel.bind(lang))
+
 
 # OPEN / CLOSE
 signal opened
@@ -75,6 +77,7 @@ func open() -> void:
 
 func close() -> void:
 	visible = false
+	_set_hud_visible(true)
 	get_tree().paused = false
 	closed.emit()
 
@@ -82,6 +85,7 @@ func close() -> void:
 func _show_hub() -> void:
 	hub.visible = true
 	close_button.visible = true
+	_set_hud_visible(true)
 	for s in screens.get_children():
 		s.visible = false
 
@@ -89,10 +93,14 @@ func _show_hub() -> void:
 func _show_screen(screen_name: String) -> void:
 	hub.visible = false
 	close_button.visible = false
+	_set_hud_visible(false)
 	for s in screens.get_children():
 		s.visible = (s.name == screen_name)
 
 
+func _set_hud_visible(value: bool) -> void:
+	if hud_buttons:
+		hud_buttons.visible = value
 # REFRESH 
 func _refresh() -> void:
 	var lang := Gameprogress.current_language

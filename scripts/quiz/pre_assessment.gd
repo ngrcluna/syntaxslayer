@@ -1,12 +1,11 @@
 extends Control
 
-@onready var progress_label = $QuizPanel/ProgressPanel/ProgressLabel
-@onready var question_text = $QuizPanel/QuestionPanel/QuestionText
-@onready var next_button = $NextButton
-@onready var finish_button = $FinishButton
-@onready var choice_buttons: Array = [
-	$QuizPanel/A, $QuizPanel/B, $QuizPanel/C, $QuizPanel/D
-]
+@onready var progress_label = %ProgressLabel
+@onready var question_panel = %QuestionPanel
+@onready var question_text = %QuestionText
+@onready var next_button = %NextButton
+@onready var finish_button = %FinishButton
+@onready var choice_buttons: Array = [%A, %B, %C, %D]
 
 var questions: Array = []
 var current_index := 0
@@ -48,11 +47,10 @@ func _ready() -> void:
 
 # Adaptive Question Text Size. ADAPTIVE???!!!
 const MAX_FONT := 50
-const MIN_FONT := 16
+const MIN_FONT := 24
 
 func _fit_question_text() -> void:
 	var font: Font = question_text.get_theme_font("font")
-	var spacing: int = question_text.get_theme_constant("line_spacing")
 	var box: Vector2 = question_text.size
 	var txt: String = question_text.text.strip_edges()
 	question_text.text = txt
@@ -61,9 +59,7 @@ func _fit_question_text() -> void:
 	for s in range(MAX_FONT, MIN_FONT - 1, -2):
 		var needed := font.get_multiline_string_size(
 			txt, HORIZONTAL_ALIGNMENT_LEFT, box.x, s)
-		var lines := int(round(needed.y / font.get_height(s)))
-		var total_h: float = needed.y + spacing * maxi(lines - 1, 0)
-		if total_h <= box.y - 8:   # 8px safety margin
+		if needed.y <= box.y:
 			chosen = s
 			break
 	question_text.add_theme_font_size_override("font_size", chosen)
@@ -145,7 +141,7 @@ func _show_results() -> void:
 		b.hide()
 	next_button.hide()
 	finish_button.show()
-	$QuizPanel/QuestionPanel.self_modulate.a = 0.0
+	question_panel.self_modulate.a = 0.0
 
 	var total = questions.size()
 	var percent = int(float(score) / total * 100.0)

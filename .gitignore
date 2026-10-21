@@ -1,15 +1,9 @@
+
+
 # Godot generated files
 .godot/
+
+# Android build output
 android/build/build/
 android/build/.gradle/
-android/.gradle/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE files
-.vscode/
-.idea/
-
-
+android/build/libs/

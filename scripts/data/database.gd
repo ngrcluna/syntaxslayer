@@ -10,8 +10,10 @@ func _ready() -> void:
 	if not db.open_db():
 		push_error("Could not open database: " + db.error_message)
 		return
+	db.query("DROP TABLE IF EXISTS bug_questions")
 	_create_tables()
 	_seed_questions()
+	_seed_bug_questions()
 
 func _create_tables() -> void:
 	db.create_table("topics", {
@@ -45,6 +47,16 @@ func _create_tables() -> void:
 		"choice_id":   {"data_type": "text", "not_null": true},
 		"correct":     {"data_type": "int",  "not_null": true}
 	})
+	db.create_table("bug_questions", {
+	"id":       {"data_type": "text", "primary_key": true, "not_null": true},
+	"language": {"data_type": "text", "not_null": true},
+	"stage":    {"data_type": "int",  "not_null": true},
+	"pool":     {"data_type": "text", "not_null": true},
+	"topic_id": {"data_type": "text", "not_null": true},
+	"text":     {"data_type": "text", "not_null": true},
+	"answers":  {"data_type": "text", "not_null": true}
+})
+	
 
 func _seed_questions() -> void:
 	# Only seed once
@@ -77,7 +89,52 @@ func _add_question(id: String, lang: String, stage: int, topic: String,
 			"is_correct": 1 if i == correct_index else 0
 		})
 
-# ---------- Public API used by the scene ----------
+func _seed_bug_questions() -> void:
+	db.query("SELECT COUNT(*) AS n FROM bug_questions")
+	if db.query_result.is_empty() or db.query_result[0].n > 0:
+		return
+	db.query("SELECT COUNT(*) AS n FROM bug_questions")
+	if db.query_result[0].n > 0:
+		return
+
+	db.query_with_bindings(
+		"INSERT OR IGNORE INTO topics (id, name, advice) VALUES (?, ?, ?)",
+		["errors", "Errors", "Review the common Python errors: SyntaxError, TypeError and NameError."])
+
+	_add_bug("py_s1_bug001", "syntax", "name = \"Kleo\nprint(name)", "SyntaxError")
+	_add_bug("py_s1_bug002", "types", "age = \"21\"\nprint(age + 5)", "TypeError")
+	_add_bug("py_s1_bug003", "types", "price = 99.50\nquantity = \"2\"\ntotal = price * quantity\nprint(total)", "TypeError")
+	_add_bug("py_s1_bug004", "names", "student_name = Kleo\nprint(student_name)", "NameError")
+	_add_bug("py_s1_bug005", "types", "score = 95\nprint(\"Your score is \" + score)", "TypeError")
+
+
+func _add_bug(id: String, pool: String, code: String, answer: String) -> void:
+	var accepted := answer + "|" + answer.replace("Error", " error")  # TypeError|Type error
+	db.insert_row("bug_questions", {
+		"id": id, "language": "python", "stage": 1, "pool": pool,
+		"topic_id": "errors",
+		"text": "What type of error is present below?\n\n" + code,
+		"answers": accepted
+	})
+
+func get_bug_questions(language: String, stage: int, pool := "") -> Array:
+	var sql := "SELECT id, topic_id, text, answers FROM bug_questions WHERE LOWER(language) = LOWER(?) AND stage = ?"
+	var args: Array = [language, stage]
+	if pool != "":
+		sql += " AND pool = ?"
+		args.append(pool)
+	db.query_with_bindings(sql, args)
+	var out: Array = []
+	for row in db.query_result.duplicate(true):
+		out.append({
+			"id": row.id,
+			"topic": row.topic_id,
+			"question": row.text,
+			"answers": row.answers.split("|")
+		})
+	return out
+
+# Public API used by the scene 
 
 func get_questions(language: String, stage: int) -> Array:
 	db.query_with_bindings(

@@ -12,10 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dqd3bxwvpnow8" path="res://assets/ui/exitbtn_pressed.png" id="8_wcxb2"]
 [ext_resource type="Texture2D" uid="uid://66vq2xavfeuh" path="res://assets/ui/runbtn.png" id="10_e321m"]
 [ext_resource type="Texture2D" uid="uid://dlm4sfmhlr5g3" path="res://assets/items/openedbook.png" id="11_7f4so"]
-[ext_resource type="Texture2D" uid="uid://cujonc1bc7q5l" path="res://assets/items/compiler_screen.png" id="11_bmcyr"]
 [ext_resource type="Texture2D" uid="uid://ls04q0ihbhxa" path="res://assets/background/Cloud BG.png" id="11_wcxb2"]
 [ext_resource type="Texture2D" uid="uid://bp2rb4kt3qiv6" path="res://assets/ui/run_pressed.png" id="11_xgtdt"]
 [ext_resource type="Texture2D" uid="uid://o6dfma53pd72" path="res://assets/items/bookmark.png" id="12_mdmap"]
+[ext_resource type="Texture2D" uid="uid://dw0ojwxvbopcd" path="res://assets/items/compiler screen.png" id="14_7f4so"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v6v5"]
 texture = ExtResource("4_e321m")
@@ -29,8 +29,8 @@ texture = ExtResource("11_7f4so")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmcyr"]
 texture = ExtResource("11_wcxb2")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mho1w"]
-texture = ExtResource("11_bmcyr")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ls2ww"]
+texture = ExtResource("14_7f4so")
 
 [node name="BagMenu" type="CanvasLayer" unique_id=1629351508]
 process_mode = 3
@@ -51,6 +51,7 @@ mouse_filter = 2
 color = Color(0.17254902, 0.17254902, 0.17254902, 0.30588236)
 
 [node name="Hub" type="PanelContainer" parent="." unique_id=95174012]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -398,8 +399,7 @@ grow_vertical = 2
 texture = ExtResource("6_xgtdt")
 expand_mode = 1
 
-[node name="CompilerScreen" type="Panel" parent="Screens" unique_id=408712516]
-visible = false
+[node name="CompilerScreen" type="Control" parent="Screens" unique_id=608345796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -412,74 +412,46 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Screens/CompilerScreen" unique_id=52319463]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 30.0
-offset_right = 1243.0
-offset_bottom = 702.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_mho1w")
-
-[node name="BackButton" type="TextureButton" parent="Screens/CompilerScreen" unique_id=2018911580]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -128.0
-offset_top = 27.0
-offset_right = -54.0
-offset_bottom = 101.0
-grow_horizontal = 0
-texture_normal = ExtResource("7_bmcyr")
-texture_pressed = ExtResource("8_wcxb2")
-texture_hover = ExtResource("8_wcxb2")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="LanguagePicker" type="OptionButton" parent="Screens/CompilerScreen" unique_id=489357795]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.661
-anchor_top = 0.027
-anchor_right = 0.732
-anchor_bottom = 0.045
-offset_left = 96.91998
-offset_top = 71.56
-offset_right = 184.99994
-offset_bottom = 95.6
-theme_override_fonts/font = ExtResource("1_qfmdu")
-theme_override_font_sizes/font_size = 24
-
-[node name="Code" type="CodeEdit" parent="Screens/CompilerScreen" unique_id=1661543045]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.33
-anchor_top = 0.446
-anchor_right = 0.335
-anchor_bottom = 0.571
-offset_left = -296.30002
-offset_top = -181.27002
-offset_right = 319.15
-offset_bottom = 186.60501
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_qfmdu")
-theme_override_font_sizes/font_size = 26
+theme_override_styles/panel = SubResource("StyleBoxTexture_ls2ww")
 
-[node name="RunButton" type="TextureButton" parent="Screens/CompilerScreen" unique_id=1940078279]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="Screens/CompilerScreen/Panel" unique_id=1798107866]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.535
-anchor_top = 0.759
-anchor_right = 0.54
-anchor_bottom = 0.759
-offset_left = -91.28003
-offset_top = -20.47998
-offset_right = 32.72003
-offset_bottom = 31.359985
-grow_vertical = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screens/CompilerScreen/Panel/MarginContainer" unique_id=1095672811]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer" unique_id=643054767]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Control2" type="Control" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=122641180]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+
+[node name="RunButton" type="TextureButton" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1940078279]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 texture_normal = ExtResource("10_e321m")
 texture_pressed = ExtResource("11_xgtdt")
 texture_hover = ExtResource("11_xgtdt")
@@ -487,20 +459,64 @@ texture_focused = ExtResource("11_xgtdt")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Output" type="RichTextLabel" parent="Screens/CompilerScreen" unique_id=629006522]
+[node name="Control" type="Control" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=438314127]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="LanguagePicker" type="OptionButton" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=489357795]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.576
-anchor_top = 0.817
-anchor_right = 0.576
-anchor_bottom = 0.817
-offset_left = 18.440002
-offset_top = -450.66498
-offset_right = 392.44
-offset_bottom = 0.33502197
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+theme_override_fonts/font = ExtResource("1_qfmdu")
+theme_override_font_sizes/font_size = 24
+
+[node name="CompilerBackButton" type="TextureButton" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2018911580]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+texture_normal = ExtResource("7_bmcyr")
+texture_pressed = ExtResource("8_wcxb2")
+texture_hover = ExtResource("8_wcxb2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer" unique_id=1319447150]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+theme_override_constants/separation = 20
+
+[node name="Code" type="CodeEdit" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1661543045]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.5
+theme_override_fonts/font = ExtResource("1_qfmdu")
+theme_override_font_sizes/font_size = 26
+wrap_mode = 1
+scroll_smooth = true
+scroll_past_end_of_file = true
+gutters_draw_line_numbers = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=671303986]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Output" type="RichTextLabel" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=629006522]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_qfmdu")
 theme_override_font_sizes/normal_font_size = 26
+
+[node name="InputBox" type="CodeEdit" parent="Screens/CompilerScreen/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1712103966]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_qfmdu")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Input Box (One input per Line)"

@@ -10,7 +10,7 @@ size = Vector2(70, 52)
 
 [node name="Door" type="Area2D" parent="." unique_id=315048486]
 script = ExtResource("1_pvw00")
-destination_scene = "uid://b7lrcleud4g5b"
+destination_scene = "uid://bd3qr8tho8xuo"
 destination_spawn = "SchoolExitSpawn"
 
 [node name="DoorShape" type="CollisionShape2D" parent="Door" unique_id=1215785829]

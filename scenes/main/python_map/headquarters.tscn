@@ -21993,7 +21993,7 @@ scale = Vector2(0.09, 0.09)
 
 [node name="Camera2D" type="Camera2D" parent="Girl Player" unique_id=976563536]
 position = Vector2(0.00019073486, -133.33334)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4)
 
 [node name="HeadquartersExitSpawn" type="Marker2D" parent="." unique_id=1159433717]
 position = Vector2(624, 187)

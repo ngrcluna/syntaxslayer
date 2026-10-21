@@ -14,6 +14,7 @@ config/name="Syntax Slayer"
 run/main_scene="uid://datpl4xwi7mn5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 boot_splash/stretch_mode=2
 boot_splash/image="uid://c6nvn425u52ye"
 

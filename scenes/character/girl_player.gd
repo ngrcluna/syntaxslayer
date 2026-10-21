@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 230
+@export var speed = 100
 @onready var animated_sprite = $girl_player_animation
-@export var animation_speed = 0.1
+@export var animation_speed = 0.05
 @onready var game_hud = $GameHud 
 
 var can_move := true
@@ -12,7 +12,6 @@ func _ready() -> void:
 	_default_mask = collision_mask
 	animated_sprite.animation_finished.connect(_on_eyes_animation_finished)
 	call_deferred("set_spawn_position")
-
 
 #KNOWLEDGE SCAN: GO INTO SCANNER + CLOSE EYES 
 
@@ -26,12 +25,11 @@ func enter_scanner(target_pos: Vector2) -> void:
 	await tween.finished
 	animated_sprite.play("girl_closingeyes")
 
-
 func _on_eyes_animation_finished() -> void:
 	match animated_sprite.animation:
 		"girl_closingeyes":
 			FadeTransition.change_scene(
-				"res://scenes/main/python_map/pre-assessment.tscn"
+                "res://scenes/main/python_map/pre-assessment.tscn"
 			)
 		"girl_openingeyes":
 			collision_mask = _default_mask
@@ -41,6 +39,7 @@ func _on_eyes_animation_finished() -> void:
 
 # SPAWN POSITION
 func set_spawn_position() -> void:
+	# From Knowledge Scan
 	var returning_from_scan: bool = SpawnManager.play_lying_up_on_spawn
 	var target_name: String = SpawnManager.spawn_name
 	if returning_from_scan:
@@ -52,7 +51,6 @@ func set_spawn_position() -> void:
 		else:
 			push_warning("Spawn point not found: " + target_name)
 		SpawnManager.spawn_name = ""
-	# RETURNING FROM KNOWLEDGE SCAN
 	if returning_from_scan:
 		SpawnManager.play_lying_up_on_spawn = false
 		_wake_up_from_scanner()
@@ -61,6 +59,14 @@ func set_spawn_position() -> void:
 		velocity = Vector2.ZERO
 		animated_sprite.play("girl_idle")
 
+	# From battle
+	if Gameprogress.bug_return_position != Gameprogress.NO_POS:
+		global_position = Gameprogress.bug_return_position
+		Gameprogress.bug_return_position = Gameprogress.NO_POS
+		can_move = true
+		velocity = Vector2.ZERO
+		animated_sprite.play("girl_idle")
+		return
 
 func _wake_up_from_scanner() -> void:
 	can_move = false
@@ -84,7 +90,6 @@ func resume_moving() -> void:
 	velocity = Vector2.ZERO
 	game_hud.visible = true
 
-
 # PLAYER MOVEMENT
 func _physics_process(_delta: float) -> void:
 
@@ -97,7 +102,7 @@ func _physics_process(_delta: float) -> void:
 		"left",
 		"right",
 		"up",
-		"down"
+        "down"
 	)
 
 	if input_direction.x != 0:

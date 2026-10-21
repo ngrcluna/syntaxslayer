@@ -39,4 +39,4 @@ func _on_input_event(
 func exit_door() -> void:
 	interaction_label.visible = false
 	SpawnManager.spawn_name = destination_spawn
-	get_tree().change_scene_to_file(destination_scene)
+	FadeTransition.change_scene(destination_scene)
