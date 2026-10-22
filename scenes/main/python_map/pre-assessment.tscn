@@ -19,6 +19,8 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mho1w"]
+
 [node name="PreAssessment" type="Control" unique_id=930089186]
 layout_mode = 3
 anchors_preset = 15
@@ -108,61 +110,75 @@ vertical_alignment = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=572078245]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 40
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=30282848]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=508197803]
 layout_mode = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 16
-columns = 2
+theme_override_constants/separation = 15
 
-[node name="A" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1778793437]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(550, 70)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=259875405]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("7_31ug1")
-theme_override_font_sizes/font_size = 50
-alignment = 0
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = 10
 
-[node name="B" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1400598103]
+[node name="A" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1778793437]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(550, 70)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
 theme_override_fonts/font = ExtResource("7_31ug1")
 theme_override_font_sizes/font_size = 50
 alignment = 0
 
-[node name="C" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=336090550]
+[node name="B" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1400598103]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(550, 70)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
 theme_override_fonts/font = ExtResource("7_31ug1")
 theme_override_font_sizes/font_size = 50
 alignment = 0
 
-[node name="D" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1987697705]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(550, 70)
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2034027870]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = 10
+
+[node name="C" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=336090550]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
 theme_override_fonts/font = ExtResource("7_31ug1")
 theme_override_font_sizes/font_size = 50
 alignment = 0
 
-[node name="FinishButton" type="TextureButton" parent="." unique_id=2050216756]
+[node name="D" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1987697705]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.925
-anchor_right = 0.5
-anchor_bottom = 0.925
-offset_left = -99.5
-offset_top = -71.880005
-offset_right = 99.5
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("7_31ug1")
+theme_override_font_sizes/font_size = 50
+alignment = 0
+
+[node name="MarginContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1946197432]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mho1w")
+
+[node name="FinishButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=2050216756]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 84)
+layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("3_yejmf")
 texture_pressed = ExtResource("4_j6v2k")
 texture_hover = ExtResource("5_kp5pm")
@@ -170,23 +186,15 @@ texture_focused = ExtResource("5_kp5pm")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="NextButton" type="TextureButton" parent="." unique_id=284314234]
+[node name="NextButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=284314234]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.925
-anchor_right = 0.5
-anchor_bottom = 0.925
-offset_left = -97.0
-offset_top = -71.0
-offset_right = 97.0
-grow_horizontal = 2
-grow_vertical = 0
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("10_krih0")
 texture_pressed = ExtResource("11_2cj26")
 texture_hover = ExtResource("11_2cj26")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/FinishButton" to="." method="_on_finish_button_pressed"]
